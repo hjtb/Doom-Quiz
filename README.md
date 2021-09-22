@@ -40,7 +40,9 @@ The site is designed to be fully responsive, accessible and styled as close as p
 ### **Design Choices**
 
 #### **Fonts** 
-To stick to the Doom theme I opted to use the Amazdoom font by Amazingmax fonts and Space Marine by Pixel Kitchen which I downloaded from [fontspace](https://www.fontspace.com/category/doom)
+* To stick to the Doom theme I opted to use the Amazdoom font by Amazingmax fonts and Space Marine by Pixel Kitchen which I downloaded from [fontspace](https://www.fontspace.com/category/doom).
+* I used the @fontface rule and used a [W3 Schools](https://www.w3schools.com/css/css3_fonts.asp) lesson to guide me.
+* For the gradient effect I used code from [CSS Gradient](https://cssgradient.io/blog/css-gradient-text/)
 
 #### **Icons**
 
