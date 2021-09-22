@@ -5,7 +5,10 @@
     src: url('SpaceMarine.ttf') format("truetype"); }
 
 body { 
-    background-color: aqua;
+    background-image: url('../images/doom_background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 h1 {
