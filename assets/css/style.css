@@ -1,0 +1,16 @@
+@font-face { font-family: AmazDoomLeft; 
+    src: url('AmazDooMLeft.ttf') format("truetype"); }
+@font-face { font-family: SpaceMarine; 
+    src: url('SpaceMarine.ttf') format("truetype"); }
+h1 {
+    font-family: AmazDoomLeft;
+    background: -webkit-linear-gradient(rgb(146, 2, 2), rgb(29, 16, 105));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+h2 {
+    font-family: SpaceMarine;
+    background: -webkit-linear-gradient(rgb(146, 2, 2), rgb(73, 1, 1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

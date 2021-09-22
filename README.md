@@ -13,39 +13,40 @@ The site is designed to be fully responsive, accessible and styled as close as p
 * A website that functions as a trivia quiz
 * The site will be responsive and accessible
 * Elements will be visually appealing and eye-catching
-* The site should generate questions appropriate to the difficulty selected by the user 
 * The site should handle user input and generate appropriate responses and feedback for the user
 * The site will provide the user with multiple choices for each question
 * The users answers will be checked against correct answers to determine the score
 * The score will be kept as the user advances in the quiz
 * The final outcome of the quiz will be returned to the user at the end
+* *The site should generate questions appropriate to the difficulty selected by the user* 
 
 ### **User Stories**
 * As a user, I want to know the purpose of the site immediately
-* As a user, I want to easily navigate the site through a menu 
 * As a user, I want to start a game easily
-* As a user, I want to be able to turn site sounds and music on or off
-* As a user, I want to be able to select the level of difficulty of the game
-* As a user, I want to receive questions at the level of difficulty I selected
-* As a user, I want the site to function correctly on all of my devices
 * As a user, I want the site to be accessible
+* As a user, I want the site to function correctly on all of my devices
 * As a user, I want to be able to register my answers to the questions
 * As a user, I want to receive feedback on whether I got the question right or wrong
 * As a user, I want to know what my score is at any time
 * As a user, I want to know how well I did on completion of the game
 * As a user, I want to be able to start another game after I finish the first
 * As a user, I want to be able to quit the game at any time
+* *As a user, I want to easily navigate the site through a menu* 
+* *As a user, I want to be able to turn site sounds and music on or off*
+* *As a user, I want to be able to select the level of difficulty of the game*
+* *As a user, I want to receive questions at the level of difficulty I selected*
 
 
 ### **Design Choices**
 
-#### Fonts 
+#### **Fonts** 
+To stick to the Doom theme I opted to use the Amazdoom font by Amazingmax fonts and Space Marine by Pixel Kitchen which I downloaded from [fontspace](https://www.fontspace.com/category/doom)
 
-#### Icons
+#### **Icons**
 
-#### Colors
+#### **Colors**
 
-#### Structure
+#### **Structure**
 
 ## **Wireframes**
 
@@ -65,7 +66,7 @@ The site is designed to be fully responsive, accessible and styled as close as p
  
 ## **Testing**
 
-### Navigation bar
+### **Menu**
 
 * **Goals**    
 
@@ -75,7 +76,7 @@ The site is designed to be fully responsive, accessible and styled as close as p
 
 * **Results**    
 
-### Bugs
+### **Bugs**
 
 * **Bug**    
 
@@ -85,4 +86,4 @@ The site is designed to be fully responsive, accessible and styled as close as p
  
 ## **Credits**
 
-### Inspiration
+### **Inspiration**
