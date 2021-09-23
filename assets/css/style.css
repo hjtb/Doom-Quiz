@@ -13,13 +13,13 @@ body {
 
 h1 {
     font-family: AmazDoomLeft;
-    background: -webkit-linear-gradient(rgb(146, 2, 2), rgb(29, 16, 105));
+    background: -webkit-linear-gradient(rgb(16, 0, 109), rgb(185, 142, 0));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 h2 {
     font-family: SpaceMarine;
-    background: -webkit-linear-gradient(rgb(146, 2, 2), rgb(73, 1, 1));
+    background: -webkit-linear-gradient(rgb(16, 0, 109 ), rgb(185, 142, 0));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
