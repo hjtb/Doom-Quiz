@@ -52,6 +52,15 @@ The site is designed to be fully responsive, accessible and styled as close as p
 
 ## **Wireframes**
 
+I used Balsamic to create the wireframes for this site. First I started witha basic wireframe for the mobile and scaled up to the desktop. This site will only consist of one page and I've decided to aim for a more minimilistic design so as not to complicate the game. The game will be easier to play with this design as users will have the game right in front of them immediately.
+
+### [Desktop Wireframe](wireframes/desktop.png)
+
+### [Tablet Wireframe](wireframes/tablet.png)
+
+### [Mobile Wireframe](wireframes/mobile.png)
+
+
 ## **Features**
  
 ### **Existing Features**
