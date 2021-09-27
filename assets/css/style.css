@@ -20,6 +20,9 @@ body {
     text-align: center;
 }
 
+.hide {
+    display: none;
+}
 
 #game-area {
     width: 80vw;
@@ -31,15 +34,49 @@ body {
 }
     
 .title {
-    width: 30rem;
+    width: 60vw;
+    max-width: 35rem;
     justify-self: start;
 }
 
 .doom-guy {
-    width: 80px;
+    width: 15vw;
+    max-width: 80px;
+    margin: 10px;
+    position:absolute, center;
+    z-index: 1;
 }
 
-.question {
+#start-game {
+    font-family: AmazDoomLeft;
+    font-size: 10vw;
+    background: -webkit-linear-gradient(rgb(1, 9, 114), rgb(248, 191, 2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#too-young {
+    margin: 10px;
+    background-image: url("../images/too-young.png") no-repeat;
+    background-color: rgba(12, 4, 121, 0.425);
+    background-size: 100%;
+    width: 50%;
+    height:50px;
+}
+
+#hurt-plenty {
+    margin: 10px;
+    background-image: url("../images/hurt-me.png") no-repeat;
+    background-color: rgba(12, 4, 121, 0.425);
+    background-size: 100%;
+
+}
+
+#question {
     font-family: AmazDoomLeft;
     font-size: 4vw;
     background: -webkit-linear-gradient(rgb(214, 0, 18), rgb(248, 191, 2));
@@ -51,8 +88,6 @@ body {
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 5px;
-    margin: 10px;
-    padding: 10px;
 }
 
 .btn {
@@ -68,5 +103,26 @@ body {
 
 .btn:hover {
     cursor:crosshair;
+    border-color: white;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+
+
+
+@media only screen and (max-width: 1200px) {
+    .btn-grid {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+    }
+  }
+
+@media only screen and (max-width: 900px) {
+    .question {
+        font-size: 4vh;
+    }
+    .btn {
+        margin: 1rem;
+        font-size: 1vh;
+    }
+  }
+ 
