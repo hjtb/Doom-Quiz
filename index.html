@@ -13,27 +13,29 @@
 </head>
 <body>
     <img class="title" src="assets/images/logo_doom.png" alt="Doom 1993 logo">
-    <div id="start-game">
-        <div>ARE YOU READY TO DIE??</div>
-        <button id="hurt-plenty"></button>
-        <button id="too-young"></button>
+    <div id="open-menu" class='container'>
+        <div class="big-doom-text">
+            SELECT YOUR LEVEL OF DIFFICULTY
+        </div>
+        <button id="hurt-me" data-type="easy" type="button" class="btn"><img src="assets/images/hurt-me.png" alt="Hurt me plenty button"></button>
+        <button id="too-young" data-type="hard" type="button" class="btn"><img src="assets/images/too-young.png" alt="Too young to die button"></button>
     </div>
-    <div id="game-area" class="container">
-        <div id="question">
+    <div id="game-area" class="container hide">
+        <div class="big-doom-text">
             Doom is the name of this game and this is your question
         </div>
-        <div id="score">
+        <div class="card" id="score">
             <div class="lives">Number of lives left</div>
-            <img class="doom-guy" src="assets/images/face-4.png" alt="Doom guys face">
+            <img id="doom-guy" src="assets/images/face-4.png" alt="Doom guys face">
         </div>
-        <div id="answers" class="btn-grid"> 
-            <button type="button" class="btn answer-a">Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom is the name of this game and this is answer A</button>
+        <div class="btn-grid"> 
+            <button id="answer-a" type="button" class="btn answer">Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom is the name of this game and this is answer A</button>
             
-            <button type="button" class="btn answer-b">Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom is the name of this game and this is answer B</button>
+            <button id="answer-b" type="button" class="btn answer">Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom is the name of this game and this is answer B</button>
             
-            <button type="button" class="btn answer-c">Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom is the name of this game and this is answer C</button>
+            <button id="answer-c" type="button" class="btn answer">Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom is the name of this game and this is answer C</button>
             
-            <button type="button" class="btn answer-d">Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom is the name of this game and this is answer D</button>
+            <button id="answer-d" type="button" class="btn answer">Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom is the name of this game and this is answer D</button>
         </div>
     </div>
 

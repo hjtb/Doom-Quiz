@@ -90,8 +90,9 @@ I used Balsamic to create the wireframes for this site. First I started witha ba
 ### **Bugs**
 
 * **Bug**    
-
+The images in the buttons wouldn't fit correctly
 * **Fix**          
+I found an article on [GeeksforGeeks](https://www.geeksforgeeks.org/how-to-auto-resize-an-image-to-fit-a-div-container-using-css/) that explained the exact issue and how to fix it. It was as simple as changing one line of CSS targeting the button and setting the object fit to cover.
 
 ## **Deployment**
  
