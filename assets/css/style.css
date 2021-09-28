@@ -42,7 +42,7 @@ body {
     border-radius: 5px;
     padding: 2vw;
     box-shadow: 0 0 10px 5px;
-    
+
 }
 
 #score {
@@ -62,7 +62,8 @@ body {
 }
     
 .title {
-    width: 60vw;
+    width: 80vw;
+    margin-top: 50px;
     max-width: 35rem;
     justify-self: start;
 }
