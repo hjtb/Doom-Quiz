@@ -21,7 +21,7 @@ body {
 }
 
 .hide {
-    display: none !important;
+    display: none;
 }
 
 #open-menu {
@@ -37,7 +37,7 @@ body {
 #game-area {
     width: 80vw;
     max-width: 80%;
-    margin: auto;
+    margin: 50px auto;
     background-color: rgba(73, 31, 31, 0.6);
     border-radius: 5px;
     padding: 2vw;
@@ -46,7 +46,8 @@ body {
 }
 
 #score {
-    max-width: 80%;
+    width: 600px;
+    max-width: 98%;
     height: 150px;
     background-image: url('../images/doom_hud.png');
     background-repeat: no-repeat;
@@ -54,7 +55,7 @@ body {
     background-position: center;
     border-radius: 5px;
     padding: 2vw;
-    margin: auto;
+    margin: 50px auto;
     box-shadow: 0 0 10px 5px;
     display: flex;
     justify-content: center;
@@ -92,7 +93,7 @@ body {
 .big-doom-text {
     font-family: AmazDoomLeft;
     font-size: 4vw;
-    background: -webkit-linear-gradient(rgb(214, 0, 18), rgb(248, 191, 2));
+    background: -webkit-linear-gradient(rgb(214, 50, 0), rgb(248, 191, 2));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -108,7 +109,7 @@ body {
     display: inline-block;
     font-family: SpaceMarine;
     font-size: 1vw;
-    background: -webkit-linear-gradient(rgba(214, 0, 18, 0.514), rgb(248, 191, 2));
+    background: -webkit-linear-gradient(rgb(214, 128, 0), rgb(247, 246, 244));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;

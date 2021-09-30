@@ -1,36 +1,36 @@
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
+
     for (let button of buttons) {
         button.addEventListener("click", function() {
-            button.addEventListener("click", function() {
-                if (this.getAttribute("data-type") === "answer") {
-                    let answer = this.getAttribute("id");
-                    alert(`You selected ${answer}!`);
-                }else {
-                    let difficultyLevel = this.getAttribute("data-type");
-                    start(difficultyLevel);
-                }
-            })
+            if (this.getAttribute("data-type") === "answer") {
+                let answer = this.getAttribute("id");
+                alert(`You selected ${answer}!`);
+            } else {
+                let difficultyLevel = this.getAttribute("data-type");
+                start(difficultyLevel);
+            }
         })
     }
 })
 
-let startButtonHard = document.getElementById("hurt-me");
-let startButtonEasy = document.getElementById("too-young");
 let gameArea = document.getElementById("game-area");
 let openMenu = document.getElementById("open-menu"); 
+let startButtonHard = document.getElementById("hurt-me");
+let startButtonEasy = document.getElementById("too-young");
 startButtonHard.addEventListener('click', start);
 startButtonEasy.addEventListener('click', start);
 
 function start(difficultyLevel) {
-    $("gameArea").show('slow');
-    openMenu.classList.add('hide');
-    if (difficultyLevel === easy) {
-
-    }else if (difficultyLevel === hard) {
-
+    $(gameArea).slideDown('slow');
+    $(".title").css({'width':'40vw', 'max-width':'20rem', 'margin':'30px auto'});
+    $(openMenu).slideUp('fast');
+    if (difficultyLevel === "easy") {
+        console.log(difficultyLevel);
+    }else if (difficultyLevel === "hard") {
+        console.log(difficultyLevel);
     }else {
-        alert(`Unknown difficulty: ${difficultyLevel}, try again kiddo`);
+        console.log(difficultyLevel);
         throw `Unknown difficulty: ${difficultyLevel}. Aborting!`;
     }
 }

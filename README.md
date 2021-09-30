@@ -94,6 +94,24 @@ The images in the buttons wouldn't fit correctly
 * **Fix**          
 I found an article on [GeeksforGeeks](https://www.geeksforgeeks.org/how-to-auto-resize-an-image-to-fit-a-div-container-using-css/) that explained the exact issue and how to fix it. It was as simple as changing one line of CSS targeting the button and setting the object fit to cover.
 
+* **Bug**    
+I couldn't get any jQuery to work on my page even after including the script in the head
+* **Fix**          
+I found an way of testing if jQuery loaded on [stackoverflow](https://stackoverflow.com/questions/7341865/checking-if-jquery-is-loaded-using-javascript) and used the test function provided to see if I had loaded jQuery correctly.
+
+```window.onload = function() {
+    if (window.jQuery) {  
+        // jQuery is loaded  
+        alert("Yeah!");
+    } else {
+        // jQuery is not loaded
+        alert("Doesn't Work");
+    }
+}
+```
+
+This test showed that I hadn't correctly installed jQuery so I went to [w3schools](https://www.w3schools.com/jquery/jquery_get_started.asp) and used the correct script for my header and this got me going with jQuery.
+
 ## **Deployment**
  
 ## **Credits**
