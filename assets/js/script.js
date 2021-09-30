@@ -21,6 +21,8 @@ let startButtonEasy = document.getElementById("too-young");
 startButtonHard.addEventListener('click', start);
 startButtonEasy.addEventListener('click', start);
 
+// add a transition where the title moves into the game area
+
 function start(difficultyLevel) {
     $(gameArea).slideDown('slow');
     $(".title").css({'width':'40vw', 'max-width':'20rem', 'margin':'30px auto'});
