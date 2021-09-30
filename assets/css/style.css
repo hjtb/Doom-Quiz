@@ -69,7 +69,7 @@ body {
 }
 
 #doom-guy {
-    width: 15vw;
+    width: 20vw;
     max-width: 80px;
     position:absolute, center;
     z-index: 0;

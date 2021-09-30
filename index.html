@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Description" content="Everything's Grand Counselling Practice in Dublin, Ireland">
     <meta name="keywords" content="doom, doom 1993, first person shooter game, classic game">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css">
@@ -17,8 +18,8 @@
         <div class="big-doom-text">
             SELECT YOUR LEVEL OF DIFFICULTY
         </div>
-        <button id="hurt-me" data-type="easy" type="button" class="btn"><img src="assets/images/hurt-me.png" alt="Hurt me plenty button"></button>
-        <button id="too-young" data-type="hard" type="button" class="btn"><img src="assets/images/too-young.png" alt="Too young to die button"></button>
+        <button id="hurt-me" data-type="hard" type="button" class="btn start"><img src="assets/images/hurt-me.png" alt="Hurt me plenty button"></button>
+        <button id="too-young" data-type="easy" type="button" class="btn start"><img src="assets/images/too-young.png" alt="Too young to die button"></button>
     </div>
     <div id="game-area" class="container hide">
         <div class="card" id="score">
@@ -29,13 +30,13 @@
             Doom is the name of this game and this is your question
         </div>
         <div class="btn-grid"> 
-            <button id="answer-a" type="button" class="btn answer">Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom is the name of this game and this is answer A</button>
+            <button id="answer-a" data-type="answer" type="button" class="btn answer">Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom is the name of this game and this is answer A</button>
             
-            <button id="answer-b" type="button" class="btn answer">Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom is the name of this game and this is answer B</button>
+            <button id="answer-b" data-type="answer" type="button" class="btn answer">Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom is the name of this game and this is answer B</button>
             
-            <button id="answer-c" type="button" class="btn answer">Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom is the name of this game and this is answer C</button>
+            <button id="answer-c" data-type="answer" type="button" class="btn answer">Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom is the name of this game and this is answer C</button>
             
-            <button id="answer-d" type="button" class="btn answer">Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom is the name of this game and this is answer D</button>
+            <button id="answer-d" data-type="answer" type="button" class="btn answer">Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom Doom is the name of this game and this is answer D</button>
         </div>
     </div>
 
