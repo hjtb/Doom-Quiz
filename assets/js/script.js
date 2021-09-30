@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     alert(`You selected ${answer}!`);
                 }else {
                     let difficultyLevel = this.getAttribute("data-type");
-                    alert(`You clicked ${difficultyLevel}`);
+                    start(difficultyLevel);
                 }
             })
         })
@@ -22,10 +22,17 @@ let openMenu = document.getElementById("open-menu");
 startButtonHard.addEventListener('click', start);
 startButtonEasy.addEventListener('click', start);
 
-function start() {
-    console.log("DOOM");
-    gameArea.classList.remove('hide');
+function start(difficultyLevel) {
+    $("gameArea").show('slow');
     openMenu.classList.add('hide');
+    if (difficultyLevel === easy) {
+
+    }else if (difficultyLevel === hard) {
+
+    }else {
+        alert(`Unknown difficulty: ${difficultyLevel}, try again kiddo`);
+        throw `Unknown difficulty: ${difficultyLevel}. Aborting!`;
+    }
 }
 
 function getQuestion() {
