@@ -37,7 +37,7 @@ body {
 #game-area {
     width: 80vw;
     max-width: 80%;
-    margin: 50px auto;
+    margin: 30px auto;
     background-color: rgba(73, 31, 31, 0.6);
     border-radius: 5px;
     padding: 2vw;
@@ -55,7 +55,7 @@ body {
     background-position: center;
     border-radius: 5px;
     padding: 2vw;
-    margin: 50px auto;
+    margin: 30px auto;
     box-shadow: 0 0 10px 5px;
     display: flex;
     justify-content: center;
@@ -136,7 +136,7 @@ body {
     }
     .btn {
         margin: 1rem;
-        font-size: 1vh;
+        font-size: 0.7rem;
     }
   }
  
