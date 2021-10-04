@@ -1,24 +1,61 @@
 {
-    "questions": [{
-            "questionText": "what year was doom released",
+    "easyQuestions": [{
+            "questionText": "When Was The First Doom Released?",
             "answers": [
                 "1993", "1996", "1991", "1995"
             ],
             "correctAnswer": "1993"
         },
         {
-            "questionText": "what year was doom 2 released",
+            "questionText": "What Is The Name Of The Protagonist Of Doom?",
             "answers": [
-                "1993", "1996", "1991", "1995"
+                "DoomGuy", "Hector Braveheart", "Doom Master", "Sargent Maelstrom"
             ],
-            "correctAnswer": "1993"
+            "correctAnswer": "DoomGuy"
         },
         {
-            "questionText": "what year was doom eternal released",
+            "questionText": "What Genre Is Doom Often Crediting With Pioneering?",
             "answers": [
-                "1993", "1996", "1991", "1995"
+                "Horror", "The First Person Shooter", "Puzzle Game", "Action RPG"
             ],
-            "correctAnswer": "1993"
+            "correctAnswer": "The First Person Shooter"
+        }
+        ,
+        {
+            "questionText": "What Genre Is Doom Often Crediting With Pioneering?",
+            "answers": [
+                "Horror", "The First Person Shooter", "Puzzle Game", "Action RPG"
+            ],
+            "correctAnswer": "The First Person Shooter"
+        }
+    ],
+    "hardQuestions": [{
+            "questionText": "What Is The Software Company Associated With Doom?",
+            "answers": [
+                "Ubisoft", "Interplay", "Bungie", "id Software"
+            ],
+            "correctAnswer": "id Software"
+        },
+        {
+            "questionText": "The Original Doom Had Such A Huge Impact On The FPS Genre, That For A While All FPSs Were Known As...?",
+            "answers": [
+                "Doomers", "Doom Games", "Doom Sequels", "Doom Clone"
+            ],
+            "correctAnswer": "Doom Clones"
+        },
+        {
+            "questionText": "Why Was Doomguy First Sent To Mars?",
+            "answers": [
+                "He Was There On Holiday", "It Was A Punishment For Assaulting A Superior Officer", "They Knew That Only He Could Stop The Demons", "He Was On A Mission To Quell A Civil War Among The Mars Colonists"
+            ],
+            "correctAnswer": "It Was A Punishment For Assaulting A Superior Officer"
+        },
+        {
+            "questionText": "What Does The 'UAC' Stand For?",
+            "answers": [
+                "Union Aerospace Corporation", "United Arab Commandos", "Unharnessing Argent Coduits", "United Adventure Corporation"
+            ],
+            "correctAnswer": "Union Aerospace Corporation"
         }
     ]
 }
