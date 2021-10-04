@@ -14,10 +14,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 })
 
-//const questions;
 let gameArea = document.getElementById("game-area");
 let openMenu = document.getElementById("open-menu"); 
 
+// set the difficulty and bring our game area in to replace the initial menu after difficulty has been selected
 function start(difficultyLevel) {
     $(gameArea).slideDown('slow').prepend($('.title'));
     $(".title").css({'width':'40vw', 'max-width':'20rem', 'margin':'10px auto'});
@@ -32,6 +32,7 @@ function start(difficultyLevel) {
     getQuestions(difficultyLevel);
 }
 
+//use our difficulty level to retrieve correct questions
 function getQuestions(difficultyLevel) {
     fetch("./questions.json")
     .then(response => {
@@ -40,6 +41,7 @@ function getQuestions(difficultyLevel) {
     .then(questions => updateQuestion(questions[`${difficultyLevel}Questions`]));
 }
 
+//
 function updateQuestion(questions) {
     console.log(questions);
     let question = questions[0];
@@ -57,7 +59,6 @@ function updateQuestion(questions) {
     answerC.innerHTML = question.answers[2];
     answerD.innerHTML = question.answers[3];
     displayQuestion.innerHTML = questionText;
-
 }
 
 function checkAnswer(answerText) {
@@ -79,3 +80,8 @@ function wrongAnswer() {
     alert("Wrong answer");
 }
 
+function getNextQuestion() {
+
+}
+// to-do
+// set questions randomly and get next question

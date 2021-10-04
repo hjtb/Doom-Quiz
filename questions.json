@@ -1,5 +1,7 @@
 {
-    "easyQuestions": [{
+    "easyQuestions": 
+    [
+        {
             "questionText": "When Was The First Doom Released?",
             "answers": [
                 "1993", "1996", "1991", "1995"
@@ -29,7 +31,9 @@
             "correctAnswer": "The First Person Shooter"
         }
     ],
-    "hardQuestions": [{
+    "hardQuestions": 
+    [
+        {
             "questionText": "What Is The Software Company Associated With Doom?",
             "answers": [
                 "Ubisoft", "Interplay", "Bungie", "id Software"
