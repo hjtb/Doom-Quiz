@@ -42,9 +42,10 @@ function getQuestions(difficultyLevel) {
 }
 
 //
-function updateQuestion(questions) {
-    console.log(questions);
-    let question = questions[0];
+function updateQuestion(levelQuestions) {
+    console.log(levelQuestions);
+    let shuffledQuestions = levelQuestions.sort(() => Math.random() - .5);
+    let question = shuffledQuestions[0];
     console.log(question);
     let questionText = question["questionText"];
     let displayQuestion = document.getElementById("question");
@@ -65,23 +66,25 @@ function checkAnswer(answerText) {
     let answer = document.getElementById("answer");
     correctAnswerText = answer.getAttribute("answer");
     if (answerText === correctAnswerText) {
-        correctAnswer();
+        correctAnswer(answerText);
+    }else if (answerText !== correctAnswerText) {
+        wrongAnswer(answerText)
     }else {
-        wrongAnswer()
+        alert("Please choose a valid answer!")
     }
     console.log(answerText)
 }
 
-function correctAnswer() {
-    alert("You got it right");
+function correctAnswer(answer) {
+    alert(`${answer} is Correct!! You got it right!`);
 }
 
-function wrongAnswer() {
-    alert("Wrong answer");
+function wrongAnswer(answer) {
+    alert(`${answer} is Wrong!! You die a little!`);
 }
 
 function getNextQuestion() {
 
 }
 // to-do
-// set questions randomly and get next question
+// get next question
