@@ -1,4 +1,8 @@
 //when the dom has loaded add event listeners to the buttons
+var globalQuestions = 1;
+var difficultyLevel;
+var questionIndex = 0;
+
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
     for (let button of buttons) {
@@ -7,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 let answer = this.innerHTML;
                 checkAnswer(answer);
             } else {
-                let difficultyLevel = this.getAttribute("data-type");
+                difficultyLevel = this.getAttribute("data-type");
                 start(difficultyLevel);
             }
         })
@@ -30,42 +34,57 @@ function start(difficultyLevel) {
         throw `Unknown difficulty: ${difficultyLevel}. Aborting!`;
     }
     getQuestions(difficultyLevel);
+    console.log(globalQuestions);
 }
 
 //use our difficulty level to retrieve correct questions
+//comment this function so you fully understand it
 function getQuestions(difficultyLevel) {
     fetch("./questions.json")
-    .then(response => {
-        console.log(response);
-        let questions = response.json();
-        return questions;
-    })
+    .then(response => response.json())
     .then(questions => {
+        globalQuestions = questions;
         console.log(questions);
         let levelQuestions = questions[`${difficultyLevel}Questions`];
         console.log(levelQuestions);
         updateQuestion(levelQuestions);
+        displayQuestion();
     })
 }
 
-//
+//credit this function - https://javascript.info/task/shuffle
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
 function updateQuestion(levelQuestions) {
     console.log(levelQuestions);
-    let shuffledQuestions = levelQuestions.sort(() => Math.random() - .5);
-    let question = shuffledQuestions[0];
-    console.log(question);
-    let questionText = question["questionText"];
+    //credit this
+    shuffle(levelQuestions)
+    console.log(`shuffled questions`);
+    console.log(levelQuestions);
+}
+
+function displayQuestion() {
+    let levelQuestions = globalQuestions[`${difficultyLevel}Questions`];
+    let currentQuestion = levelQuestions[questionIndex];
+    console.log(currentQuestion);
+    let questionText = currentQuestion["questionText"];
     let displayQuestion = document.getElementById("question");
     let answerA = document.getElementById("answer-a");
     let answerB = document.getElementById("answer-b");
     let answerC = document.getElementById("answer-c");
     let answerD = document.getElementById("answer-d");
     let answer = document.getElementById("answer");
-    answer.setAttribute("answer", question.correctAnswer);
-    answerA.innerHTML = question.answers[0];
-    answerB.innerHTML = question.answers[1];
-    answerC.innerHTML = question.answers[2];
-    answerD.innerHTML = question.answers[3];
+    answer.setAttribute("answer", currentQuestion.correctAnswer);
+    shuffle(currentQuestion.answers);
+    answerA.innerHTML = currentQuestion.answers[0];
+    answerB.innerHTML = currentQuestion.answers[1];
+    answerC.innerHTML = currentQuestion.answers[2];
+    answerD.innerHTML = currentQuestion.answers[3];
     displayQuestion.innerHTML = questionText;
 }
 
@@ -79,7 +98,9 @@ function checkAnswer(answerText) {
     }else {
         alert("Please choose a valid answer!")
     }
+    getNextQuestion();
     console.log(answerText)
+    console.log(globalQuestions);
 }
 
 function correctAnswer(answer) {
@@ -91,7 +112,10 @@ function wrongAnswer(answer) {
 }
 
 function getNextQuestion() {
-
+    questionIndex = questionIndex + 1;
+    displayQuestion();
 }
 // to-do
-// get next question
+// add scores/lives functionality
+// what to do at end of questions/game?
+// fix answer buttons to lose the weird outline after selection
