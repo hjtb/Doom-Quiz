@@ -36,9 +36,16 @@ function start(difficultyLevel) {
 function getQuestions(difficultyLevel) {
     fetch("./questions.json")
     .then(response => {
-       return response.json();
+        console.log(response);
+        let questions = response.json();
+        return questions;
     })
-    .then(questions => updateQuestion(questions[`${difficultyLevel}Questions`]));
+    .then(questions => {
+        console.log(questions);
+        let levelQuestions = questions[`${difficultyLevel}Questions`];
+        console.log(levelQuestions);
+        updateQuestion(levelQuestions);
+    })
 }
 
 //
