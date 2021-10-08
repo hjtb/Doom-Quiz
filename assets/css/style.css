@@ -74,6 +74,9 @@ body {
     position:absolute, center;
     z-index: 0;
 }
+#lives {
+    color: white;
+}
 
 .big-doom-text {
     font-family: AmazDoomLeft;

@@ -24,11 +24,59 @@
         }
         ,
         {
-            "questionText": "What Genre Is Doom Often Crediting With Pioneering?",
+            "questionText": "In The First Doom Game, Doomguy is Left Guarding The Perimeter Of The Phobos Facility Armed With What Weapon?",
             "answers": [
-                "Horror", "The First Person Shooter", "Puzzle Game", "Action RPG"
+                "A Chainsaw", "An Assault Rifle", "A BFG", "A Pistol"
             ],
-            "correctAnswer": "The First Person Shooter"
+            "correctAnswer": "A Pistol"
+        }
+        ,
+        {
+            "questionText": "Which Difficulty Was Added As A Joke?",
+            "answers": [
+                "Fairy Tale Difficulty", "Nightmare", "Ultra-Violence", "Super Easy"
+            ],
+            "correctAnswer": "Nightmare"
+        }
+        ,
+        {
+            "questionText": "What Is Doomguy's Catchphrase?",
+            "answers": [
+                "He Never Talks", "'Rip And Tear!'", "'War... War Never Changes'", "'Get Ready To Die'"
+            ],
+            "correctAnswer": "He Never Talks"
+        }
+        ,
+        {
+            "questionText": "Why Did Bosses Famously Hate Doom (1993)?",
+            "answers": [
+                "Because Old People Didn't Know How To Play It", "It Apparently Reduced Worker's Productivity", "Because It Had Hidden Messages Denigrating Corporations", "They Wanted To Play But Everyone Kept It Secret"
+            ],
+            "correctAnswer": "It Apparently Reduced Worker's Productivity"
+        }
+        ,
+        {
+            "questionText": "What Weapon, Other Than Fists, Is Used For Close Combat?",
+            "answers": [
+                "Chainsaw", "Light Saber", "Cyber Axe", "Power Hammer"
+            ],
+            "correctAnswer": "Chainsaw"
+        }
+        ,
+        {
+            "questionText": "Why Was Doom Mentioned In A 1993 Congressional Hearing?",
+            "answers": [
+                "An Example Of Hardworking Americans", "Extreme Violence", "Because Doom Clones Were Violating Copyright Laws", "Because Doom Was used by Osama Bin Laden"
+            ],
+            "correctAnswer": "Extreme Violence"
+        }
+        ,
+        {
+            "questionText": "What Military Group Is Doomguy Part Of?",
+            "answers": [
+                "Space Marines", "UAC Security", "The Space Rangers", "The United States Demon Response Force"
+            ],
+            "correctAnswer": "Space Marines"
         }
     ],
     "hardQuestions": 
@@ -39,27 +87,78 @@
                 "Ubisoft", "Interplay", "Bungie", "id Software"
             ],
             "correctAnswer": "id Software"
-        },
+        }
+        ,
         {
-            "questionText": "The Original Doom Had Such A Huge Impact On The FPS Genre, That For A While All FPSs Were Known As...?",
+            "questionText": "The Original Doom Had Such A Huge Impact On The FPS Genre, That For A While All FPS Games Were Known As...?",
             "answers": [
-                "Doomers", "Doom Games", "Doom Sequels", "Doom Clone"
+                "Doomers", "Doom Games", "Doom Sequels", "Doom Clones"
             ],
             "correctAnswer": "Doom Clones"
-        },
+        }
+        ,
         {
             "questionText": "Why Was Doomguy First Sent To Mars?",
             "answers": [
                 "He Was There On Holiday", "It Was A Punishment For Assaulting A Superior Officer", "They Knew That Only He Could Stop The Demons", "He Was On A Mission To Quell A Civil War Among The Mars Colonists"
             ],
             "correctAnswer": "It Was A Punishment For Assaulting A Superior Officer"
-        },
+        }
+        ,
         {
             "questionText": "What Does The 'UAC' Stand For?",
             "answers": [
                 "Union Aerospace Corporation", "United Arab Commandos", "Unharnessing Argent Coduits", "United Adventure Corporation"
             ],
             "correctAnswer": "Union Aerospace Corporation"
+        }
+        ,
+        {
+            "questionText": "What First Caused The Opening Of A Portal To Hell?",
+            "answers": [
+                "They Drilled Too Far Into Mars", "Someone Messed With A Ouija Board", "Experimentation On Genetics", "Experimentation On Teleportation"
+            ],
+            "correctAnswer": "Experimentation On Teleportation"
+        }
+        ,
+        {
+            "questionText": "Who Is The Final Boss In Doom 1?",
+            "answers": [
+                "Cyberdemon", "Harlot Of Hell", "Satan", "Muscle Demon"
+            ],
+            "correctAnswer": "Cyberdemon"
+        }
+        ,
+        {
+            "questionText": "Who Is The Final Boss In Doom 2?",
+            "answers": [
+                "Beezlebub", "Icon Of Sin", "Goat Whore", "Lucifer"
+            ],
+            "correctAnswer": "Icon Of Sin"
+        }
+        ,
+        {
+            "questionText": "What Does BFG Stand For?",
+            "answers": [
+                "Barium-Fulcrum Gun", "Big F**king Gun", "Ballistic Fluorescence Gun", "Big Friendly Giant"
+            ],
+            "correctAnswer": "Big F**king Gun"
+        }
+        ,
+        {
+            "questionText": "What Powerup In The New Doom Game Allows You To Beat Demons To Death With Your Bare Hands?",
+            "answers": [
+                "Quad Damage", "Berserk", "Invulnerability", "Mayhem"
+            ],
+            "correctAnswer": "Berserk"
+        }
+        ,
+        {
+            "questionText": "What Is The Final Boss In The Newest Doom Game?",
+            "answers": [
+                "Sauron", "Cyberdemon", "Hell Knights", "Spider Mastermind"
+            ],
+            "correctAnswer": "Spider Mastermind"
         }
     ]
 }
