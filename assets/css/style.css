@@ -42,6 +42,7 @@ body {
     border-radius: 5px;
     padding: 2vw;
     box-shadow: 0 0 10px 5px;
+    z-index: -1;
 }
 
 #score {
@@ -78,10 +79,14 @@ body {
     color: white;
 }
 
+#score-update {
+    z-index: 1;
+}
+
 .big-doom-text {
     font-family: AmazDoomLeft;
     font-size: 4vw;
-    background: -webkit-linear-gradient(rgb(214, 50, 0), rgb(248, 191, 2));
+    background: -webkit-linear-gradient(rgb(11, 0, 214), rgb(255, 255, 255));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

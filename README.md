@@ -45,7 +45,7 @@ The site is designed to be fully responsive, accessible and styled as close as p
 * For the gradient effect I used code from [CSS Gradient](https://cssgradient.io/blog/css-gradient-text/)
 
 #### **Icons**
-
+[Favicon](https://favicon.io/favicon-converter/)
 #### **Colors**
 
 #### **Structure**

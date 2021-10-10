@@ -1,9 +1,16 @@
 //when the dom has loaded add event listeners to the buttons
-let globalQuestions = 1;
+let globalQuestions;
 let difficultyLevel;
+let levelQuestions;
 let questionIndex = 0;
 let lives = 3;
 let streak = 0;
+let gameArea = document.getElementById("game-area");
+let openMenu = document.getElementById("open-menu"); 
+let livesLeft = document.getElementById("lives");
+let scoreUpdate = document.getElementById("score-update");
+let youDie = document.getElementById("you-die");
+let youSurvived = document.getElementById("you-survived");
 
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
@@ -20,9 +27,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 })
 
-let gameArea = document.getElementById("game-area");
-let openMenu = document.getElementById("open-menu"); 
-let livesLeft = document.getElementById("lives");
 
 // set the difficulty and bring our game area in to replace the initial menu after difficulty has been selected
 function start(difficultyLevel) {
@@ -37,13 +41,13 @@ function start(difficultyLevel) {
         throw `Unknown difficulty: ${difficultyLevel}. Aborting!`;
     }
     getQuestions(difficultyLevel);
-    console.log(globalQuestions);
+    // console.log(globalQuestions);
 }
 
 //use our difficulty level to retrieve correct questions
 function getQuestions(difficultyLevel) {
     // fetch will get the data with a promise 
-    fetch("./questions.json")
+    fetch("./json/questions.json")
     // then we pass the response from the fetch into an anonymous function that parses the data
     .then(response => response.json())
     // we then pass the result from that function into another anonymous function
@@ -53,7 +57,8 @@ function getQuestions(difficultyLevel) {
         // we then use our difficultyLevel to get the correct question set from our globalQuestions which we named levelQuestions
         let levelQuestions = questions[`${difficultyLevel}Questions`];
         //finally we pass levelQuestions into updateQuestion and then displayQuestion
-        updateQuestion(levelQuestions);
+        //updateQuestion(levelQuestions);
+        shuffle(levelQuestions);
         displayQuestion();
     })
 }
@@ -67,11 +72,11 @@ function shuffle(array) {
   }
 //i've a feeling I dont need this function now but, I'm hesitant to delete until all functionality has been written
 function updateQuestion(levelQuestions) {
-    shuffle(levelQuestions)
+    shuffle(levelQuestions);
 }
 
 function displayQuestion() {
-    let levelQuestions = globalQuestions[`${difficultyLevel}Questions`];
+    levelQuestions = globalQuestions[`${difficultyLevel}Questions`];
     let currentQuestion = levelQuestions[questionIndex];
     console.log(currentQuestion);
     let questionText = currentQuestion["questionText"];
@@ -80,8 +85,8 @@ function displayQuestion() {
     let answerB = document.getElementById("answer-b");
     let answerC = document.getElementById("answer-c");
     let answerD = document.getElementById("answer-d");
-    let answer = document.getElementById("answer");
-    answer.setAttribute("answer", currentQuestion.correctAnswer);
+    let correctAnswerDiv = document.getElementById("correct-answer");
+    correctAnswerDiv.setAttribute("correct-answer-text", currentQuestion.correctAnswer);
     shuffle(currentQuestion.answers);
     answerA.innerHTML = currentQuestion.answers[0];
     answerB.innerHTML = currentQuestion.answers[1];
@@ -92,8 +97,8 @@ function displayQuestion() {
 }
 
 function checkAnswer(answerText) {
-    let answer = document.getElementById("answer");
-    correctAnswerText = answer.getAttribute("answer");
+    let correctAnswerDiv = document.getElementById("correct-answer");
+    correctAnswerText = correctAnswerDiv.getAttribute("correct-answer-text");
     if (answerText === correctAnswerText) {
         correctAnswer(answerText);
     }else if (answerText !== correctAnswerText) {
@@ -101,28 +106,52 @@ function checkAnswer(answerText) {
     }else {
         alert("Please choose a valid answer!")
     }
-    getNextQuestion();
-    //console.log(answerText)
-    console.log(globalQuestions);
+    // console.log(globalQuestions);
 }
 
 function correctAnswer(answer) {
     streak = streak + 1;
-    alert(`${answer} is Correct!! You got it right!`);
+    if (questionIndex > levelQuestions.lenght) {
+        $(gameArea).slideUp('fast');
+        $(youSurvived).slideDown('slow');
+    }
+    else {
+        scoreUpdate.innerHTML = `${answer} is correct, you are on a streak of ${streak} right answers. You have ${lives} lives left.`;
+        $(scoreUpdate).slideDown('slow');
+        getNextQuestion();
+    }
 }
 
 function wrongAnswer(answer) {
     lives = lives - 1;
     streak = 0;
-    alert(`${answer} is Wrong!! You die a little!`);
+    scoreUpdate.innerHTML = `${answer} is wrong, you lose a life you have ${lives} lives left.`;
+    let doomGuy = document.getElementById("doom-guy");
+    if (lives == 2) {
+        doomGuy.src = "assets/images/doom-guy/guy-2.png";
+        getNextQuestion();
+    }
+    else if (lives == 1) {
+        doomGuy.src = "assets/images/doom-guy/guy-1.png";
+        getNextQuestion();
+    }
+    else if (lives == 0) {
+        $(gameArea).slideUp('fast');
+        $(youDie).slideDown('slow');
+    }
 }
 
 function getNextQuestion() {
     questionIndex = questionIndex + 1;
+    // remove focus from clicked answer
+    document.activeElement.blur();
     displayQuestion();
 }
+
 // to-do
-// add scores/lives functionality
+// add scores/lives display
 // what to do at end of questions/game?
-// fix answer buttons to lose the weird outline after selection
 // create a card to hold the face similar to the image used now
+// more consistent comments
+// music that can be toggled on or off
+// left and right face animation
