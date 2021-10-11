@@ -109,8 +109,13 @@ I found an way of testing if jQuery loaded on [stackoverflow](https://stackoverf
     }
 }
 ```
-
 This test showed that I hadn't correctly installed jQuery so I went to [w3schools](https://www.w3schools.com/jquery/jquery_get_started.asp) and used the correct script for my header and this got me going with jQuery.
+
+* **Bug**    
+The game kept displaying the same question until I got it right
+* **Fix**          
+I added some console logs into my checkAnswer, correctAnswer and wrongAnswer functions which revealed that I was stuck in the same loop because I only increased the question index in the correctAnswer function.
+I then changed where the question index was increased to the getNextQuestion function so it would change the index each time a new question was needed.
 
 ## **Deployment**
  
