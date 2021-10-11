@@ -5,11 +5,11 @@ let levelQuestions;
 let questionIndex = 0;
 let lives = 3;
 let streak = 0;
+let doomGuy = document.getElementById("doom-guy");
 let gameArea = document.getElementById("game-area");
 let openMenu = document.getElementById("open-menu"); 
 let livesLeft = document.getElementById("lives");
 let scoreUpdate = document.getElementById("score-update");
-let youDie = document.getElementById("you-die");
 let youSurvived = document.getElementById("you-survived");
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -110,15 +110,19 @@ function checkAnswer(answerText) {
 }
 
 function correctAnswer(answer) {
-    streak = streak + 1;
-    if (questionIndex > levelQuestions.lenght) {
+    if (questionIndex === levelQuestions.length) {
         $(gameArea).slideUp('fast');
+        youSurvived.innerHTML = "YOU LIVE TO FIGHT ANOTHER DAY!!";
         $(youSurvived).slideDown('slow');
     }
     else {
         scoreUpdate.innerHTML = `${answer} is correct, you are on a streak of ${streak} right answers. You have ${lives} lives left.`;
-        $(scoreUpdate).slideDown('slow');
+        $(scoreUpdate).fadeIn().delay(3000).fadeOut();
         getNextQuestion();
+    }
+    streak = streak + 1;
+    if (streak > 2) {
+        doomGuy.src = "assets/images/doom-guy/god.png";
     }
 }
 
@@ -126,16 +130,17 @@ function wrongAnswer(answer) {
     lives = lives - 1;
     streak = 0;
     scoreUpdate.innerHTML = `${answer} is wrong, you lose a life you have ${lives} lives left.`;
-    let doomGuy = document.getElementById("doom-guy");
-    if (lives == 2) {
+    let youDie = document.getElementById("you-die");
+    if (lives === 2) {
         doomGuy.src = "assets/images/doom-guy/guy-2.png";
         getNextQuestion();
     }
-    else if (lives == 1) {
+    else if (lives === 1) {
         doomGuy.src = "assets/images/doom-guy/guy-1.png";
         getNextQuestion();
     }
-    else if (lives == 0) {
+    else if (lives === 0) {
+        youDie.innerHTML = "YOU DIE!!";
         $(gameArea).slideUp('fast');
         $(youDie).slideDown('slow');
     }
@@ -149,7 +154,7 @@ function getNextQuestion() {
 }
 
 // to-do
-// add scores/lives display
+// position scorecard, you-survived and you-die
 // what to do at end of questions/game?
 // create a card to hold the face similar to the image used now
 // more consistent comments
