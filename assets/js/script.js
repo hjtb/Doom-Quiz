@@ -7,10 +7,12 @@ let lives = 3;
 let streak = 0;
 let doomGuy = document.getElementById("doom-guy");
 let gameArea = document.getElementById("game-area");
+let scoreCard = document.getElementById("score");
 let openMenu = document.getElementById("open-menu"); 
 let livesLeft = document.getElementById("lives");
 let scoreUpdate = document.getElementById("score-update");
 let youSurvived = document.getElementById("you-survived");
+let doomTheme = document.getElementById("doom-theme");
 
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
@@ -26,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     }
 })
-
 
 // set the difficulty and bring our game area in to replace the initial menu after difficulty has been selected
 function start(difficultyLevel) {
@@ -110,6 +111,7 @@ function checkAnswer(answerText) {
 }
 
 function correctAnswer(answer) {
+    streak = streak + 1;
     if (questionIndex === levelQuestions.length) {
         $(gameArea).slideUp('fast');
         youSurvived.innerHTML = "YOU LIVE TO FIGHT ANOTHER DAY!!";
@@ -117,10 +119,11 @@ function correctAnswer(answer) {
     }
     else {
         scoreUpdate.innerHTML = `${answer} is correct, you are on a streak of ${streak} right answers. You have ${lives} lives left.`;
-        $(scoreUpdate).fadeIn().delay(3000).fadeOut();
+        $(scoreCard).slideUp('slow').delay(3000);
+        $(scoreUpdate).slideDown('slow').delay(3000).slideUp('slow');
+        $(scoreCard).slideDown('slow');
         getNextQuestion();
     }
-    streak = streak + 1;
     if (streak > 2) {
         doomGuy.src = "assets/images/doom-guy/god.png";
     }
@@ -130,6 +133,9 @@ function wrongAnswer(answer) {
     lives = lives - 1;
     streak = 0;
     scoreUpdate.innerHTML = `${answer} is wrong, you lose a life you have ${lives} lives left.`;
+    $(scoreCard).slideUp('slow').delay(3000);
+    $(scoreUpdate).slideDown('slow').delay(3000).slideUp('slow');
+    $(scoreCard).slideDown('slow');
     let youDie = document.getElementById("you-die");
     if (lives === 2) {
         doomGuy.src = "assets/images/doom-guy/guy-2.png";
@@ -156,7 +162,6 @@ function getNextQuestion() {
 // to-do
 // position scorecard, you-survived and you-die
 // what to do at end of questions/game?
-// create a card to hold the face similar to the image used now
 // more consistent comments
 // music that can be toggled on or off
 // left and right face animation
