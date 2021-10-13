@@ -7,7 +7,7 @@ let lives = 3;
 let streak = 0;
 let doomGuy = document.getElementById("doom-guy");
 let gameArea = document.getElementById("game-area");
-let scoreCard = document.getElementById("score");
+let scoreCard = document.getElementsByClassName("slide-up");
 let openMenu = document.getElementById("open-menu"); 
 let livesLeft = document.getElementById("lives");
 let scoreUpdate = document.getElementById("score-update");
@@ -160,7 +160,7 @@ function getNextQuestion() {
 }
 
 // to-do
-// position scorecard, you-survived and you-die
+// you-survived and you-die
 // what to do at end of questions/game?
 // more consistent comments
 // music that can be toggled on or off

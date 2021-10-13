@@ -52,7 +52,7 @@ body {
     font-size: 4vw;
     color: rgb(255, 238, 0);
     text-align: center;
-    margin: auto;
+    margin: 50px,auto;
     width: 90vw;
     max-width: 700px;
     background-color: rgba(73, 31, 31, 0.6);
