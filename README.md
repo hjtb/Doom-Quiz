@@ -46,6 +46,7 @@ The site is designed to be fully responsive, accessible and styled as close as p
 
 #### **Icons**
 [Favicon](https://favicon.io/favicon-converter/)
+I used [Font Awesome](https://fontawesome.com/v5.15/icons/volume-mute?style=solid) for the toggle mute button
 
 #### **Colors**
 To stick with the color theme of the original game's title page I went with reds and yellows that we mainly see on the title image.  
@@ -53,7 +54,6 @@ Here's an image of the title screen I took inspiration from:
 
 ![Doom Title](assets/images/doom-title-image.png)
 
-Move along.
 #### **Structure**
 
 ## **Wireframes**

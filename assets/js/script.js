@@ -22,8 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
             if (this.getAttribute("data-type") === "answer") {
                 let answer = this.innerHTML;
                 checkAnswer(answer);
-            } else if (this.getAttribute("data-type") === "on" || "off"){
-                toggleMute(this.getAttribute("data-type"));
+            } else if (this.getAttribute("data-type") === "toggle-mute"){
+                toggleMute(this.textContent);
+                console.log(this.textContent);
             } else {
                 difficultyLevel = this.getAttribute("data-type");
                 start(difficultyLevel);
@@ -166,16 +167,12 @@ function getNextQuestion() {
 }
 
 function toggleMute(onOff) {
-    if (onOff === "off" ) {
+    if (onOff === "Off " ) {
         doomThemeMusic.pause();
-        muteButton.innerHTML = `On 
-        <i class="fas fa-volume-up"></i>`;
-        muteButton.setAttribute("data-type", "on");
+        muteButton.innerHTML = 'On <i class="fas fa-volume-up"></i>';
     }else {
         doomThemeMusic.play();
-        muteButton.innerHTML = `Off 
-        <i class="fas fa-volume-mute"></i>`;
-        muteButton.setAttribute("data-type", "off");
+        muteButton.innerHTML = 'Off <i class="fas fa-volume-mute"></i>';
     }
 }
 
