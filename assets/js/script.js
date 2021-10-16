@@ -3,18 +3,19 @@ let globalQuestions;
 let difficultyLevel;
 let levelQuestions;
 let questionIndex = 0;
-let lives = 3;
+let lives = 1;
 let streak = 0;
-let doomGuy = document.querySelector("#doom-guy");
-let gameArea = document.querySelector("#game-area");
-let scoreCard = document.querySelectorAll(".slide-up");
-let openMenu = document.querySelector("#open-menu"); 
-let livesLeft = document.querySelector("#lives");
-let currentStreak = document.querySelector("#streak");
-let scoreUpdate = document.querySelector("#score-update");
-let youSurvived = document.querySelector("#you-survived");
-let doomThemeMusic = document.querySelector("#doom-theme-music");
-let muteButton = document.querySelector("#mute");
+const doomGuy = document.querySelector("#doom-guy");
+const gameArea = document.querySelector("#game-area");
+const scoreCard = document.querySelectorAll(".slide-up");
+const openMenu = document.querySelector("#open-menu"); 
+const livesLeft = document.querySelector("#lives");
+const currentStreak = document.querySelector("#streak");
+const scoreUpdate = document.querySelector("#score-update");
+const youSurvived = document.querySelector("#you-survived");
+const doomThemeMusic = document.querySelector("#doom-theme-music");
+const muteButton = document.querySelector("#mute");
+const youDie = document.querySelector("#you-die");
 
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
@@ -142,7 +143,6 @@ function wrongAnswer(answer) {
     You have ${lives} lives left.`;
     $(scoreCard).slideUp('fast').delay(4000).slideDown('slow');
     $(scoreUpdate).slideDown('slow').delay(4000).slideUp('fast');
-    let youDie = document.querySelector("#you-die");
     if (lives === 2) {
         doomGuy.src = "assets/images/doom-guy/guy-2.png";
         getNextQuestion();
@@ -154,7 +154,7 @@ function wrongAnswer(answer) {
     else if (lives === 0) {
         youDie.innerHTML = "YOU DIE!!";
         $(gameArea).slideUp('fast');
-        $(youDie).slideDown('slow').prepend($('.title')).prepend($(doomGuy));
+        $(youDie).slideDown('slow').prepend($(doomGuy)).prepend($('.title'));
     }
 }
 
