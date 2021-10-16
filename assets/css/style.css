@@ -91,7 +91,7 @@ body {
     position: relative;
     width: 80vw;
     max-width: 80%;
-    max-height: 80%;
+    height: 800px;
     margin: 30px auto;
     background-color: rgba(73, 31, 31, 0.8);
     padding: 2vw;
@@ -118,7 +118,8 @@ body {
     
 .title {
     width: 80vw;
-    margin-top: 50px;
+    padding: 1vh;
+    margin-top: 40px;
     max-width: 35rem;
     justify-self: start;
 }
@@ -129,11 +130,26 @@ body {
     position:absolute, center;
     z-index: 0;
 }
+
 #lives {
-    font-family: AmazDoomLeft;
-    font-size: 4vw;
-    color: white;
-    display: none;
+    font-family: SpaceMarine;
+    font-size: 1.5rem;
+    color: rgb(233, 232, 232);
+    position: absolute;
+    top: 30px;
+    right: 70px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#streak {
+    font-family: SpaceMarine;
+    font-size: 1.5rem;
+    color: rgb(233, 232, 232);
+    position: absolute;
+    top: 30px;
+    left: 90px;
+    text-shadow: 2px 2px 4px #000000;
+
 }
 
 .big-doom-text {

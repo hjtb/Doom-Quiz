@@ -10,6 +10,7 @@ let gameArea = document.querySelector("#game-area");
 let scoreCard = document.querySelectorAll(".slide-up");
 let openMenu = document.querySelector("#open-menu"); 
 let livesLeft = document.querySelector("#lives");
+let currentStreak = document.querySelector("#streak");
 let scoreUpdate = document.querySelector("#score-update");
 let youSurvived = document.querySelector("#you-survived");
 let doomThemeMusic = document.querySelector("#doom-theme-music");
@@ -24,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 checkAnswer(answer);
             } else if (this.getAttribute("data-type") === "toggle-mute"){
                 toggleMute(this.textContent);
-                console.log(this.textContent);
             } else {
                 difficultyLevel = this.getAttribute("data-type");
                 start(difficultyLevel);
@@ -75,7 +75,6 @@ function updateQuestion(levelQuestions) {
 function displayQuestion() {
     levelQuestions = globalQuestions[`${difficultyLevel}Questions`];
     let currentQuestion = levelQuestions[questionIndex];
-    console.log(currentQuestion);
     let questionText = currentQuestion["questionText"];
     let displayQuestion = document.querySelector("#question");
     let answerA = document.querySelector("#answer-a");
@@ -90,6 +89,7 @@ function displayQuestion() {
     answerC.innerHTML = currentQuestion.answers[2];
     answerD.innerHTML = currentQuestion.answers[3];
     livesLeft.innerHTML = lives;
+    currentStreak.innerHTML = streak;
     displayQuestion.innerHTML = questionText;
 }
 
@@ -128,7 +128,7 @@ function correctAnswer(answer) {
             You have ${lives} lives left.`;
         }
         $(scoreCard).slideUp('fast').delay(4000);
-        $(scoreUpdate).slideDown('slow').delay(4000).slideUp('slow');
+        $(scoreUpdate).slideDown('slow').delay(4000).slideUp('fast');
         $(scoreCard).slideDown('slow');
         getNextQuestion();
     }
@@ -140,9 +140,8 @@ function wrongAnswer(answer) {
     scoreUpdate.innerHTML = `${answer} IS WRONG!!  
     You lose a life!  
     You have ${lives} lives left.`;
-    $(scoreCard).slideUp('fast').delay(4000);
-    $(scoreUpdate).slideDown('slow').delay(4000).slideUp('slow');
-    $(scoreCard).slideDown('slow');
+    $(scoreCard).slideUp('fast').delay(4000).slideDown('slow');
+    $(scoreUpdate).slideDown('slow').delay(4000).slideUp('fast');
     let youDie = document.querySelector("#you-die");
     if (lives === 2) {
         doomGuy.src = "assets/images/doom-guy/guy-2.png";
@@ -167,13 +166,14 @@ function getNextQuestion() {
 }
 
 function toggleMute(onOff) {
-    if (onOff === "Off " ) {
+    if (onOff === "On " ) {
         doomThemeMusic.pause();
-        muteButton.innerHTML = 'On <i class="fas fa-volume-up"></i>';
+        muteButton.innerHTML = 'Off <i class="fas fa-volume-mute"></i>';
     }else {
         doomThemeMusic.play();
-        muteButton.innerHTML = 'Off <i class="fas fa-volume-mute"></i>';
+        muteButton.innerHTML = 'On <i class="fas fa-volume-up"></i>';
     }
+    document.activeElement.blur();
 }
 
 
