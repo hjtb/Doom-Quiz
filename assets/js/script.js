@@ -13,7 +13,6 @@ let livesLeft = document.getElementById("lives");
 let scoreUpdate = document.getElementById("score-update");
 let youSurvived = document.getElementById("you-survived");
 let doomTheme = document.getElementById("doom-theme");
-
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
     for (let button of buttons) {
@@ -24,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 difficultyLevel = this.getAttribute("data-type");
                 start(difficultyLevel);
+                doomTheme.play();
             }
         })
     }
