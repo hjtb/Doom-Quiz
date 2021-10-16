@@ -13,6 +13,7 @@ let livesLeft = document.getElementById("lives");
 let scoreUpdate = document.getElementById("score-update");
 let youSurvived = document.getElementById("you-survived");
 let doomTheme = document.getElementById("doom-theme");
+
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
     for (let button of buttons) {
@@ -112,28 +113,40 @@ function checkAnswer(answerText) {
 
 function correctAnswer(answer) {
     streak = streak + 1;
+    if (streak % 3 === 0) {
+        doomGuy.src = "assets/images/doom-guy/god.png";
+        lives ++;
+    }
     if (questionIndex === levelQuestions.length) {
         $(gameArea).slideUp('fast');
         youSurvived.innerHTML = "YOU LIVE TO FIGHT ANOTHER DAY!!";
         $(youSurvived).slideDown('slow');
     }
     else {
-        scoreUpdate.innerHTML = `${answer} is correct, you are on a streak of ${streak} right answers. You have ${lives} lives left.`;
-        $(scoreCard).slideUp('slow').delay(3000);
+        if (streak === 3) {
+            scoreUpdate.innerHTML = `${answer} IS CORRECT!!  
+            You've answered ${streak} right answers in a row.  
+            You gain a life!!  
+            You have ${lives} lives left.`;
+        }else {
+            scoreUpdate.innerHTML = `${answer} IS CORRECT!!  
+            You're on a streak of ${streak} right answers!   
+            You have ${lives} lives left.`;
+        }
+        $(scoreCard).slideUp('fast').delay(3000);
         $(scoreUpdate).slideDown('slow').delay(3000).slideUp('slow');
         $(scoreCard).slideDown('slow');
         getNextQuestion();
-    }
-    if (streak > 2) {
-        doomGuy.src = "assets/images/doom-guy/god.png";
     }
 }
 
 function wrongAnswer(answer) {
     lives = lives - 1;
     streak = 0;
-    scoreUpdate.innerHTML = `${answer} is wrong, you lose a life you have ${lives} lives left.`;
-    $(scoreCard).slideUp('slow').delay(3000);
+    scoreUpdate.innerHTML = `${answer} IS WRONG!!  
+    You lose a life!  
+    You have ${lives} lives left.`;
+    $(scoreCard).slideUp('fast').delay(3000);
     $(scoreUpdate).slideDown('slow').delay(3000).slideUp('slow');
     $(scoreCard).slideDown('slow');
     let youDie = document.getElementById("you-die");
@@ -148,7 +161,7 @@ function wrongAnswer(answer) {
     else if (lives === 0) {
         youDie.innerHTML = "YOU DIE!!";
         $(gameArea).slideUp('fast');
-        $(youDie).slideDown('slow');
+        $(youDie).slideDown('slow').prepend($('.title')).prepend($(doomGuy));
     }
 }
 

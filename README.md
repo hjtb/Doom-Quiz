@@ -123,6 +123,12 @@ The game kept displaying the same question until I got it right
 I added some console logs into my checkAnswer, correctAnswer and wrongAnswer functions which revealed that I was stuck in the same loop because I only increased the question index in the correctAnswer function.
 I then changed where the question index was increased to the getNextQuestion function so it would change the index each time a new question was needed.
 
+* **Bug**    
+The scoreupdate section shadowing was displaying at the start of the game before it had been revealed.
+This was a s a result of the display:inline-block css attribute overwriting the display hidden attribute.
+* **Fix**          
+I removed the display:inline-block from the css. This ensured that the display attribute would only be overwritten when the update would be displayed
+
 ## **Deployment**
  
 ## **Credits**
