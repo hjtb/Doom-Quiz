@@ -167,13 +167,20 @@ ul li::before {
     margin: 10px;
     font-family:SpaceMarine,'Orbitron', sans-serif;
     font-size: 1rem;
-    background: linear-gradient(rgb(255, 217, 0), rgb(255, 255, 255));
-    background: -webkit-linear-gradient(rgb(255, 217, 0), rgb(255, 255, 255));
-    background-clip: text;
-    -webkit-background-clip: text;
     color: rgb(255, 217, 0);
-    -webkit-text-fill-color: transparent;
 }
+
+
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+    #list {
+        background: linear-gradient(rgb(255, 217, 0), rgb(255, 255, 255));
+        background: -webkit-linear-gradient(rgb(255, 217, 0), rgb(255, 255, 255));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+    }
+  }
 
 #btn-grid {
     display: grid;
