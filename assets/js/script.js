@@ -16,6 +16,10 @@ const doomThemeMusicRef = document.querySelector("#doom-theme-music");
 const muteButtonRef = document.querySelector("#mute");
 const youSurvivedRef = document.querySelector("#you-survived");
 const youDieRef = document.querySelector("#you-die");
+const answerARef = document.querySelector("#answer-a");
+const answerBRef = document.querySelector("#answer-b");
+const answerCRef = document.querySelector("#answer-c");
+const answerDRef = document.querySelector("#answer-d");
 
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
@@ -78,20 +82,16 @@ function displayQuestion() {
     let currentQuestion = levelQuestions[questionIndex];
     let questionText = currentQuestion["questionText"];
     let displayQuestion = document.querySelector("#question");
-    let answerA = document.querySelector("#answer-a");
-    let answerB = document.querySelector("#answer-b");
-    let answerC = document.querySelector("#answer-c");
-    let answerD = document.querySelector("#answer-d");
     let correctAnswerDiv = document.querySelector("#correct-answer");
     correctAnswerDiv.setAttribute("correct-answer-text", currentQuestion.correctAnswer);
     shuffle(currentQuestion.answers);
-    answerA.innerHTML = currentQuestion.answers[0];
-    answerB.innerHTML = currentQuestion.answers[1];
-    answerC.innerHTML = currentQuestion.answers[2];
-    answerD.innerHTML = currentQuestion.answers[3];
+    answerARef.innerHTML = currentQuestion.answers[0];
+    answerBRef.innerHTML = currentQuestion.answers[1];
+    answerCRef.innerHTML = currentQuestion.answers[2];
+    answerDRef.innerHTML = currentQuestion.answers[3];
     livesLeftRef.innerHTML = lives;
     currentStreakRef.innerHTML = streak;
-    displayQuestion.innerHTML = questionText;
+    displayQuestion.innerHTML = `${questionIndex + 1}. ${questionText}` ;
 }
 
 function checkAnswer(answerText) {
