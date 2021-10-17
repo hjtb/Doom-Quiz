@@ -127,7 +127,14 @@ I then changed where the question index was increased to the getNextQuestion fun
 The scoreupdate section shadowing was displaying at the start of the game before it had been revealed.
 This was a s a result of the display:inline-block css attribute overwriting the display hidden attribute.
 * **Fix**          
-I removed the display:inline-block from the css. This ensured that the display attribute would only be overwritten when the update would be displayed
+I removed the display:inline-block from the css. This ensured that the display attribute would only be overwritten when the score update would be displayed
+
+* **Bug**    
+The final two questions are the same every time.
+
+* **Fix**          
+After debugging in the browser by console logging the question index and length of the questions list it became clear that I had miscalculated when to end the game if a player had survived.
+Instead of ending the game if the question index was equal to the length of the questions list which is 10, I set it to the length of the question list minus one. This is to take into account that indexing starts at 0 not 1.
 
 ## **Deployment**
  

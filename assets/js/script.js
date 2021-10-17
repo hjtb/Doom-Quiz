@@ -2,20 +2,20 @@
 let globalQuestions;
 let difficultyLevel;
 let levelQuestions;
-let questionIndex = 0;
+let questionIndex = 9;
 let lives = 1;
 let streak = 0;
-const doomGuy = document.querySelector("#doom-guy");
-const gameArea = document.querySelector("#game-area");
-const scoreCard = document.querySelectorAll(".slide-up");
-const openMenu = document.querySelector("#open-menu"); 
-const livesLeft = document.querySelector("#lives");
-const currentStreak = document.querySelector("#streak");
-const scoreUpdate = document.querySelector("#score-update");
-const youSurvived = document.querySelector("#you-survived");
-const doomThemeMusic = document.querySelector("#doom-theme-music");
-const muteButton = document.querySelector("#mute");
-const youDie = document.querySelector("#you-die");
+const doomGuyRef = document.querySelector("#doom-guy");
+const gameAreaRef = document.querySelector("#game-area");
+const scoreCardRef = document.querySelectorAll(".slide-up");
+const openMenuRef = document.querySelector("#open-menu"); 
+const livesLeftRef = document.querySelector("#lives");
+const currentStreakRef = document.querySelector("#streak");
+const scoreUpdateRef = document.querySelector("#score-update");
+const doomThemeMusicRef = document.querySelector("#doom-theme-music");
+const muteButtonRef = document.querySelector("#mute");
+const youSurvivedRef = document.querySelector("#you-survived");
+const youDieRef = document.querySelector("#you-die");
 
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 difficultyLevel = this.getAttribute("data-type");
                 start(difficultyLevel);
-                doomThemeMusic.play();
+                doomThemeMusicRef.play();
             }
         })
     }
@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // set the difficulty and bring our game area in to replace the initial menu after difficulty has been selected
 function start(difficultyLevel) {
-    $(gameArea).slideDown('slow').prepend($('.title'));
+    $(gameAreaRef).slideDown('slow').prepend($('.title'));
     $(".title").css({'width':'40vw', 'max-width':'20rem', 'margin':'10px auto'});
-    $(openMenu).slideUp('fast');
+    $(openMenuRef).slideUp('fast');
     getQuestions(difficultyLevel);
 }
 
@@ -89,8 +89,8 @@ function displayQuestion() {
     answerB.innerHTML = currentQuestion.answers[1];
     answerC.innerHTML = currentQuestion.answers[2];
     answerD.innerHTML = currentQuestion.answers[3];
-    livesLeft.innerHTML = lives;
-    currentStreak.innerHTML = streak;
+    livesLeftRef.innerHTML = lives;
+    currentStreakRef.innerHTML = streak;
     displayQuestion.innerHTML = questionText;
 }
 
@@ -109,28 +109,28 @@ function checkAnswer(answerText) {
 function correctAnswer(answer) {
     streak = streak + 1;
     if (streak % 3 === 0) {
-        doomGuy.src = "assets/images/doom-guy/god.png";
+        doomGuyRef.src = "assets/images/doom-guy/god.png";
         lives ++;
     }
-    if (questionIndex === levelQuestions.length) {
-        $(gameArea).slideUp('fast');
-        youSurvived.innerHTML = "YOU LIVE TO FIGHT ANOTHER DAY!!";
-        $(youSurvived).slideDown('slow');
+    if (questionIndex === levelQuestions.length - 1) {
+        $(gameAreaRef).slideUp('fast');
+        youSurvivedRef.innerHTML = "YOU LIVE TO FIGHT ANOTHER DAY!!";
+        $(youSurvivedRef).slideDown('slow');
     }
     else {
         if (streak === 3) {
-            scoreUpdate.innerHTML = `${answer} IS CORRECT!!  
+            scoreUpdateRef.innerHTML = `${answer} IS CORRECT!!  
             You've answered ${streak} right answers in a row.  
             You gain a life!!  
             You have ${lives} lives left.`;
         }else {
-            scoreUpdate.innerHTML = `${answer} IS CORRECT!!  
+            scoreUpdateRef.innerHTML = `${answer} IS CORRECT!!  
             You're on a streak of ${streak} right answers!   
             You have ${lives} lives left.`;
         }
-        $(scoreCard).slideUp('fast').delay(4000);
-        $(scoreUpdate).slideDown('slow').delay(4000).slideUp('fast');
-        $(scoreCard).slideDown('slow');
+        $(scoreCardRef).slideUp('fast').delay(4000);
+        $(scoreUpdateRef).slideDown('slow').delay(4000).slideUp('fast');
+        $(scoreCardRef).slideDown('slow');
         getNextQuestion();
     }
 }
@@ -138,23 +138,23 @@ function correctAnswer(answer) {
 function wrongAnswer(answer) {
     lives = lives - 1;
     streak = 0;
-    scoreUpdate.innerHTML = `${answer} IS WRONG!!  
+    scoreUpdateRef.innerHTML = `${answer} IS WRONG!!  
     You lose a life!  
     You have ${lives} lives left.`;
-    $(scoreCard).slideUp('fast').delay(4000).slideDown('slow');
-    $(scoreUpdate).slideDown('slow').delay(4000).slideUp('fast');
+    $(scoreCardRef).slideUp('fast').delay(4000).slideDown('slow');
+    $(scoreUpdateRef).slideDown('slow').delay(4000).slideUp('fast');
     if (lives === 2) {
-        doomGuy.src = "assets/images/doom-guy/guy-2.png";
+        doomGuyRef.src = "assets/images/doom-guy/guy-2.png";
         getNextQuestion();
     }
     else if (lives === 1) {
-        doomGuy.src = "assets/images/doom-guy/guy-1.png";
+        doomGuyRef.src = "assets/images/doom-guy/guy-1.png";
         getNextQuestion();
     }
     else if (lives === 0) {
-        youDie.innerHTML = "YOU DIE!!";
-        $(gameArea).slideUp('fast');
-        $(youDie).slideDown('slow').prepend($(doomGuy)).prepend($('.title'));
+        $(gameAreaRef).slideUp('fast');
+        youDieRef.innerHTML = "YOU DIE!!";
+        $(youDieRef).slideDown('slow');
     }
 }
 
@@ -167,11 +167,11 @@ function getNextQuestion() {
 
 function toggleMute(onOff) {
     if (onOff === "On " ) {
-        doomThemeMusic.pause();
-        muteButton.innerHTML = 'Off <i class="fas fa-volume-mute"></i>';
+        doomThemeMusicRef.pause();
+        muteButtonRef.innerHTML = 'Off <i class="fas fa-volume-mute"></i>';
     }else {
-        doomThemeMusic.play();
-        muteButton.innerHTML = 'On <i class="fas fa-volume-up"></i>';
+        doomThemeMusicRef.play();
+        muteButtonRef.innerHTML = 'On <i class="fas fa-volume-up"></i>';
     }
     document.activeElement.blur();
 }
