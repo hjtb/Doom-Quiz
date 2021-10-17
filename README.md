@@ -143,7 +143,7 @@ The bullet points of the game instructions were black and couldn't be seen with 
 I found a fix on [w3schools](https://www.w3schools.com/howto/howto_css_bullet_color.asp) that did exactly what I needed.
 
 ## **Deployment**
- 
+ https://hjtb.github.io/Doom-Quiz/
 ## **Credits**
 
 ### **Inspiration**
