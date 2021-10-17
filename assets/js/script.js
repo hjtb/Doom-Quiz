@@ -50,7 +50,7 @@ function start(difficultyLevel) {
 //use our difficulty level to retrieve correct questions
 function getQuestions(difficultyLevel) {
     // fetch will get the data with a promise 
-    fetch("./json/questions.json")
+    fetch("./assets/data/questions.json")
     // then we pass the response from the fetch into an anonymous function that parses the data
     .then(response => response.json())
     // we then pass the result from that function into another anonymous function
