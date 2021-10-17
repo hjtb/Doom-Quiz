@@ -2,8 +2,8 @@
 let globalQuestions;
 let difficultyLevel;
 let levelQuestions;
-let questionIndex = 9;
-let lives = 1;
+let questionIndex = 0;
+let lives = 3;
 let streak = 0;
 const doomGuyRef = document.querySelector("#doom-guy");
 const gameAreaRef = document.querySelector("#game-area");
@@ -114,7 +114,6 @@ function correctAnswer(answer) {
     }
     if (questionIndex === levelQuestions.length - 1) {
         $(gameAreaRef).slideUp('fast');
-        youSurvivedRef.innerHTML = "YOU LIVE TO FIGHT ANOTHER DAY!!";
         $(youSurvivedRef).slideDown('slow');
     }
     else {
@@ -153,7 +152,6 @@ function wrongAnswer(answer) {
     }
     else if (lives === 0) {
         $(gameAreaRef).slideUp('fast');
-        youDieRef.innerHTML = "YOU DIE!!";
         $(youDieRef).slideDown('slow');
     }
 }
@@ -176,10 +174,11 @@ function toggleMute(onOff) {
     document.activeElement.blur();
 }
 
+function displayRules() {
+    
+    document.activeElement.blur();
+}
+
 
 // to-do
-// you-survived and you-die
-// what to do at end of questions/game?
 // more consistent comments
-// music that can be toggled on or off
-// left and right face animation

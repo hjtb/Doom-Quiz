@@ -14,6 +14,32 @@
     <title>DOOM</title>
 </head>
 <body>
+    <div id="how-to-button" class="btn small-doom-text" data-bs-toggle="modal" data-bs-target="#game-rules">
+        HOW TO PLAY ?
+    </div>
+    
+    <div class="modal fade" id="game-rules" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="big-doom-text">GAME RULES</h5>
+                    <div class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></div>
+                </div>
+                <div class="modal-body">
+                    <ul class="small-doom-text">
+                        <li>You begin the quiz with 3 lives</li>
+                        <li>You will be asked 10 Doom related questions</li>
+                        <li>You will have 4 answers to choose from</li>
+                        <li>Every wrong answer you give you lose a life</li>
+                        <li>Answer 3 Questions right in a row to gain a life</li>
+                        <li>Win by getting through the quiz without losing all 3 lives</li>
+                        <li>The dashboard will show how many lives you have and you current streak</li>
+                        <li>GOOD LUCK!!! You'll need it....</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <img class="title" src="assets/images/logo_doom.png" alt="Doom 1993 logo">
     <div id="open-menu" class='container'>
         <div class="big-doom-text">
@@ -22,6 +48,7 @@
         <button data-type="hard" type="button" class="btn start"><img src="assets/images/hurt-me.png" alt="Hurt me plenty button"></button>
         <button data-type="easy" type="button" class="btn start"><img src="assets/images/too-young.png" alt="Too young to die button"></button>
     </div>
+
     <div id="game-area" class="container hide">
         <button id="mute" data-type="toggle-mute" type="button" class="btn small-doom-text">On <i class="fas fa-volume-up"></i></button>
         <div class="card slide-up" id="score"> 
@@ -38,13 +65,22 @@
             <button id="answer-d" data-type="answer" type="button" class="btn small-doom-text"></button>
         </div>
     </div>
-    <span id="correct-answer"></span>
-    <div id="you-die" class="container hide"></div>
-    <div id="you-survived" class="container hide"></div>
+
+    <div id="you-die" class="container end-game hide">
+        <div>YOU DIE!!</div> 
+        <div><img class="final-image" src="assets/images/doom-guy/dead.png" alt="Doom guy dead"></div> 
+    </div>
+
+    <div id="you-survived" class="container end-game hide">
+        <div>YOU LIVE TO FIGHT ANOTHER DAY!!</div>
+        <div><img class="final-image" src="assets/images/doom-guy/evil-3.png" alt="Doom guy with an evil grin"></div>
+    </div>
+
     <audio loop="loop" id="doom-theme-music">
         <source src="assets/css/sounds/atDoomsGate.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+    <span id="correct-answer"></span>
     <script src="assets/js/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>

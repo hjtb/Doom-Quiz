@@ -72,7 +72,7 @@ I used Balsamic to create the wireframes for this site. First I started witha ba
 ### **Existing Features**
 
 ### **Ideas for more Features**
- 
+ play again
 ## **Technologies used**
  
 ### **Languages**
@@ -135,6 +135,12 @@ The final two questions are the same every time.
 * **Fix**          
 After debugging in the browser by console logging the question index and length of the questions list it became clear that I had miscalculated when to end the game if a player had survived.
 Instead of ending the game if the question index was equal to the length of the questions list which is 10, I set it to the length of the question list minus one. This is to take into account that indexing starts at 0 not 1.
+
+* **Bug**    
+The bullet points of the game instructions were black and couldn't be seen with the dark background
+
+* **Fix**          
+I found a fix on [w3schools](https://www.w3schools.com/howto/howto_css_bullet_color.asp) that did exactly what I needed.
 
 ## **Deployment**
  
