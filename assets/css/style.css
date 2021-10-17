@@ -103,7 +103,7 @@ ul li::before {
     position: relative;
     width: 80vw;
     max-width: 80%;
-    height: 700px;
+    min-height: 700px;
     margin: 30px auto;
     background-color: rgba(73, 31, 31, 0.8);
     padding: 2vw;
