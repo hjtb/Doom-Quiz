@@ -2,8 +2,9 @@
 
 ## **Goal for this project** 
 
-The goal for this project is to create an interactive quiz site that is themed around the 1993 Doom game. 
-The site is designed to be fully responsive, accessible and styled as close as possible to the original game.
+Have you been craving a way to test your knowledge on the legendary original first person shooter game??
+Well, here is the answer to your prayers.
+This game will test how well you know the Doom game series.
 
 
 ## **UX**
@@ -143,10 +144,10 @@ The bullet points of the game instructions were black and couldn't be seen with 
 I found a fix on [w3schools](https://www.w3schools.com/howto/howto_css_bullet_color.asp) that did exactly what I needed.
 
 * **Bug**    
-The space marine font did not work on mobile
+The answer, mute and how to buttons weren't displaying on mobile
 
 * **Fix**          
-I found a 1980s gaming font on [Google Fonts](https://fonts.google.com/specimen/Press+Start+2P#standard-styles) that would fit in with the retro game theme. It isn't as good as the space marine font but it's better than no text. I will have to search for another fitting back up.
+I found a 1980s gaming font on [Google Fonts](https://fonts.google.com/specimen/Trade+Winds?query=trade) that replaces amazdoomleft quite well and I also found a similar one called orbitron which matches . It isn't as good as the space marine font but it's better than no text. I will have to search for another fitting back up.
 
 ## **Deployment**
  https://hjtb.github.io/Doom-Quiz/
