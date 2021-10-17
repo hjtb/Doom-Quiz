@@ -146,7 +146,7 @@ I found a fix on [w3schools](https://www.w3schools.com/howto/howto_css_bullet_co
 The space marine font did not work on mobile
 
 * **Fix**          
-I found a 
+I found a 1980s gaming font on [Google Fonts](https://fonts.google.com/specimen/Press+Start+2P#standard-styles) that would fit in with the retro game theme. It isn't as good as the space marine font but it's better than no text. I will have to search for another fitting back up.
 
 ## **Deployment**
  https://hjtb.github.io/Doom-Quiz/
