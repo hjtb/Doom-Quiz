@@ -168,24 +168,13 @@ ul li::before {
     font-family:SpaceMarine,'Orbitron', sans-serif;
     font-size: 1rem;
     color: rgb(255, 217, 0);
-}
-
-@supports (-webkit-background-clip: text) or (background-clip: text) {
-    .small-doom-text {
-        background: linear-gradient(rgb(255, 217, 0), rgb(255, 255, 255));
-        background: -webkit-linear-gradient(rgb(255, 217, 0), rgb(255, 255, 255));
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        color: transparent;
-    }
+    text-shadow: 2px 2px 4px #000000;
 }
 
 #btn-grid {
-    display: inline-block;
+    display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 5px;
-    color: rgb(255, 217, 0);
 }
 
 .start {
@@ -224,8 +213,9 @@ ul li::before {
 
 .btn:hover {
     cursor:crosshair;
-    color: white;
+    color: rgb(255, 255, 255);
     border-color: white;
+    text-shadow: 2px 2px 4px #ff0000;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgb(0, 0, 0) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
