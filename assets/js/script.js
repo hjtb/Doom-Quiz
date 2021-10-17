@@ -35,9 +35,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 start(difficultyLevel);
                 doomThemeMusicRef.play();
             }
-        })
+        });
     }
-})
+});
 
 // set the difficulty and bring our game area in to replace the initial menu after difficulty has been selected
 function start(difficultyLevel) {
@@ -62,7 +62,7 @@ function getQuestions(difficultyLevel) {
         //finally we pass levelQuestions into updateQuestion and then displayQuestion
         shuffle(levelQuestions);
         displayQuestion();
-    })
+    });
 }
 
 //credit this function - https://javascript.info/task/shuffle
@@ -72,10 +72,6 @@ function shuffle(array) {
       [array[i], array[j]] = [array[j], array[i]];
     }
   }
-//i've a feeling I dont need this function now but, I'm hesitant to delete until all functionality has been written
-function updateQuestion(levelQuestions) {
-    shuffle(levelQuestions);
-}
 
 function displayQuestion() {
     levelQuestions = globalQuestions[`${difficultyLevel}Questions`];

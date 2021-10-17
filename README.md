@@ -1,5 +1,7 @@
 # **Doom**
 
+![multiple_screens_image](assets/images/different-screen-sizes.png)
+
 ## **Goal for this project** 
 
 Have you been craving a way to test your knowledge on the legendary original first person shooter game??
@@ -147,7 +149,7 @@ I found a fix on [w3schools](https://www.w3schools.com/howto/howto_css_bullet_co
 The answer, mute and how to buttons weren't displaying on mobile
 
 * **Fix**          
-I found a 1980s gaming font on [Google Fonts](https://fonts.google.com/specimen/Trade+Winds?query=trade) that replaces amazdoomleft quite well and I also found a similar one called orbitron which matches . It isn't as good as the space marine font but it's better than no text. I will have to search for another fitting back up.
+I found a font on [Google Fonts](https://fonts.google.com/specimen/Trade+Winds?query=trade) that replaces amazdoomleft quite well and I also found a similar one called orbitron which matches the space marine font very well.
 
 ## **Deployment**
  https://hjtb.github.io/Doom-Quiz/
