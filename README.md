@@ -32,12 +32,9 @@ This game will test how well you know the Doom game series.
 * As a user, I want to receive feedback on whether I got the question right or wrong
 * As a user, I want to know what my score is at any time
 * As a user, I want to know how well I did on completion of the game
-* As a user, I want to be able to start another game after I finish the first
-* As a user, I want to be able to quit the game at any time
-* *As a user, I want to easily navigate the site through a menu* 
-* *As a user, I want to be able to turn site sounds and music on or off*
-* *As a user, I want to be able to select the level of difficulty of the game*
-* *As a user, I want to receive questions at the level of difficulty I selected*
+* As a user, I want to be able to turn site sounds and music on or off
+* As a user, I want to be able to select the level of difficulty of the game
+* As a user, I want to receive questions at the level of difficulty I selected
 
 
 ### **Design Choices**
@@ -75,7 +72,8 @@ I used Balsamic to create the wireframes for this site. First I started witha ba
 ### **Existing Features**
 
 ### **Ideas for more Features**
- play again
+* As a user, I want to be able to start another game after I finish the first
+* As a user, I want to be able to quit the game at any time
 ## **Technologies used**
  
 ### **Languages**
@@ -148,8 +146,11 @@ I found a fix on [w3schools](https://www.w3schools.com/howto/howto_css_bullet_co
 * **Bug**    
 The answer, mute and how to buttons weren't displaying on mobile
 
-* **Fix**          
+* **Fix**
+Initially I susopected the fonts weren't loading and I had realised that I didn't add secondary fonts in case they didn't load.         
 I found a font on [Google Fonts](https://fonts.google.com/specimen/Trade+Winds?query=trade) that replaces amazdoomleft quite well and I also found a similar one called orbitron which matches the space marine font very well.
+Upon loading these new fonts into the site it still didn't display the text in the buttons or in the game instructions.
+I found an article on [Stack Overflow](https://stackoverflow.com/questions/31289537/webkit-text-fill-color-transparent-not-working-in-safari-7-1-7) which explained exactly the issue I was up against and realised that the webkit fill color was causing the issue. After attempting numerous solutions on the page to try and implement the webkit fill color feature I eventually decided it wasn't worth losing functionality for a gradient on some text so I ommited the feature and stuck with a basic text shadow instead to highlight the text.
 
 ## **Deployment**
  https://hjtb.github.io/Doom-Quiz/
