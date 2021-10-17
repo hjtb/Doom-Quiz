@@ -135,7 +135,7 @@ ul li::before {
 }
 
 #lives {
-    font-family: SpaceMarine, 'Press Start 2P', cursive;
+    font-family: SpaceMarine,'Orbitron', sans-serif;
     font-size: 1.5rem;
     color: rgb(233, 232, 232);
     position: absolute;
@@ -145,7 +145,7 @@ ul li::before {
 }
 
 #streak {
-    font-family: SpaceMarine, 'Press Start 2P', cursive;
+    font-family: SpaceMarine,'Orbitron', sans-serif;
     font-size: 1.5rem;
     color: rgb(233, 232, 232);
     position: absolute;
@@ -156,7 +156,7 @@ ul li::before {
 }
 
 .big-doom-text {
-    font-family: AmazDoomLeft 'Press Start 2P', cursive;
+    font-family: AmazDoomLeft, 'Trade Winds', cursive;
     font-size: 3rem;
     background: -webkit-linear-gradient(rgb(255, 0, 0), rgb(255, 217, 0));
     -webkit-background-clip: text;
@@ -172,8 +172,8 @@ ul li::before {
 
 .small-doom-text {
     margin: 10px;
-    font-family: SpaceMarine, 'Press Start 2P', cursive;
-    font-size: 1.5vh;
+    font-family:SpaceMarine,'Orbitron', sans-serif;
+    font-size: 1rem;
     background: -webkit-linear-gradient(rgb(255, 217, 0), rgb(255, 255, 255));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -192,7 +192,7 @@ ul li::before {
 
 .end-game {
     padding: 30px;
-    font-family: AmazDoomLeft, "Arial";
+    font-family: AmazDoomLeft;
     font-size: 4vw;
     color: rgb(255, 238, 0);
     text-shadow: 2px 2px 4px #000000;
