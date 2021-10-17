@@ -74,6 +74,7 @@ function shuffle(array) {
   }
 
 function displayQuestion() {
+    document.activeElement.blur();
     levelQuestions = globalQuestions[`${difficultyLevel}Questions`];
     let currentQuestion = levelQuestions[questionIndex];
     let questionText = currentQuestion["questionText"];
@@ -87,7 +88,7 @@ function displayQuestion() {
     answerDRef.innerHTML = currentQuestion.answers[3];
     livesLeftRef.innerHTML = lives;
     currentStreakRef.innerHTML = streak;
-    displayQuestion.innerHTML = `${questionIndex + 1}. ${questionText}` ;
+    displayQuestion.innerHTML = `${questionIndex + 1}. ${questionText}`;
 }
 
 function checkAnswer(answerText) {
@@ -169,12 +170,3 @@ function toggleMute(onOff) {
     }
     document.activeElement.blur();
 }
-
-function displayRules() {
-    
-    document.activeElement.blur();
-}
-
-
-// to-do
-// more consistent comments
