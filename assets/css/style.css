@@ -170,6 +170,17 @@ ul li::before {
     color: rgb(255, 217, 0);
 }
 
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+    .small-doom-text {
+        background: linear-gradient(rgb(255, 217, 0), rgb(255, 255, 255));
+        background: -webkit-linear-gradient(rgb(255, 217, 0), rgb(255, 255, 255));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+    }
+}
+
 #btn-grid {
     display: inline-block;
     grid-template-columns: repeat(2, auto);
