@@ -167,18 +167,19 @@ ul li::before {
     margin: 10px;
     font-family:SpaceMarine,'Orbitron', sans-serif;
     font-size: 1rem;
-    color: rgb(255, 217, 0);
     background: linear-gradient(rgb(255, 217, 0), rgb(255, 255, 255));
     background: -webkit-linear-gradient(rgb(255, 217, 0), rgb(255, 255, 255));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-background-clip: text;
+    color: rgb(255, 217, 0);
+    -webkit-text-fill-color: transparent;
 }
 
 #btn-grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 5px;
+    color: rgb(255, 217, 0);
 }
 
 .start {
