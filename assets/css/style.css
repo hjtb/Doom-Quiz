@@ -172,7 +172,7 @@ ul li::before {
 
 
 @supports (-webkit-background-clip: text) or (background-clip: text) {
-    #list {
+    .small-doom-text {
         background: linear-gradient(rgb(255, 217, 0), rgb(255, 255, 255));
         background: -webkit-linear-gradient(rgb(255, 217, 0), rgb(255, 255, 255));
         background-clip: text;
