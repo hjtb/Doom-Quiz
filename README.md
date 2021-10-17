@@ -142,6 +142,12 @@ The bullet points of the game instructions were black and couldn't be seen with 
 * **Fix**          
 I found a fix on [w3schools](https://www.w3schools.com/howto/howto_css_bullet_color.asp) that did exactly what I needed.
 
+* **Bug**    
+The space marine font did not work on mobile
+
+* **Fix**          
+I found a 
+
 ## **Deployment**
  https://hjtb.github.io/Doom-Quiz/
 ## **Credits**
