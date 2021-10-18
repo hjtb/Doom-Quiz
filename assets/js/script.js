@@ -83,6 +83,12 @@ function shuffle(array) {
     }
   }
 
+  /**
+ * Displays the correct question and answer by using the levelQuestions and the difficulty level
+ * to retrieve them from the questions.json file and then sets the correct answer to the correct answer div
+ * uses shuffle to shuffle the answers of the questions and sets html for lives and streak
+ * @param {*}
+ */
 function displayQuestion() {
     document.activeElement.blur();
     levelQuestions = globalQuestions[`${difficultyLevel}Questions`];
@@ -101,6 +107,11 @@ function displayQuestion() {
     displayQuestion.innerHTML = `${questionIndex + 1}. ${questionText}`;
 }
 
+/**
+ * Accepts answerText string and checks it against the correct answer
+ * then calls wrongAnswer/correctAnswer depending on outcome and passes answerText 
+ * @param {string} answerText 
+ */
 function checkAnswer(answerText) {
     let correctAnswerDiv = document.querySelector("#correct-answer");
     correctAnswerText = correctAnswerDiv.getAttribute("correct-answer-text");
@@ -113,6 +124,15 @@ function checkAnswer(answerText) {
     }
 }
 
+/**
+ * Accepts answer as a parameter
+ * Increments streak and also lives if streak is multiple of 3
+ * Ends the game if question index has reached the end of the questions
+ * Updates characters face on streak
+ * Displays the correct message for correct answers and if a life has been gained
+ * Calls nextQuestion function if questions are left
+ * @param {string} answer 
+ */
 function correctAnswer(answer) {
     streak = streak + 1;
     if (streak % 3 === 0) {
@@ -141,6 +161,15 @@ function correctAnswer(answer) {
     }
 }
 
+/**
+ * Accepts answer as a parameter
+ * Reduces lives by 1 and resets streak to 0
+ * Ends the game if lives has reached 0
+ * Updates characters face
+ * Displays the correct message for incorrect answers
+ * Calls nextQuestion function if lives not = 0
+ * @param {string} answer 
+ */
 function wrongAnswer(answer) {
     lives = lives - 1;
     streak = 0;
@@ -163,6 +192,11 @@ function wrongAnswer(answer) {
     }
 }
 
+/**
+ * Increments the question index
+ * Calls displayQuestion function
+ * @param {*} levelQuestions 
+ */
 function getNextQuestion() {
     questionIndex = questionIndex + 1;
     // remove focus from clicked answer
@@ -170,6 +204,11 @@ function getNextQuestion() {
     displayQuestion();
 }
 
+/**
+ * Accepts onOff as a parameter
+ * Pauses/Plays the music and resets the innerHTML of the mute button
+ * @param {string} onOff 
+ */
 function toggleMute(onOff) {
     if (onOff === "On " ) {
         doomThemeMusicRef.pause();
