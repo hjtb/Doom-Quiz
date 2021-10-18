@@ -21,10 +21,10 @@ This game will test how well you know the Doom game series.
 * The users answers will be checked against correct answers to determine the score
 * The score will be kept as the user advances in the quiz
 * The final outcome of the quiz will be returned to the user at the end
-* *The site should generate questions appropriate to the difficulty selected by the user* 
+* The site should generate questions appropriate to the difficulty selected by the user
 
 ### **User Stories**
-* As a user, I want to know the purpose of the site immediately
+* As a user, I want to know how to use the game
 * As a user, I want to start a game easily
 * As a user, I want the site to be accessible
 * As a user, I want the site to function correctly on all of my devices

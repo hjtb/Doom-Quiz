@@ -39,7 +39,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// set the difficulty and bring our game area in to replace the initial menu after difficulty has been selected
+/**
+ * Accepts difficult level as a parameter
+ * Then slides the open menu out of the way to make way for the game area 
+ * Then pass difficulty level to getQuestions
+ * @param {string} difficultyLevel 
+ */
 function start(difficultyLevel) {
     $(gameAreaRef).slideDown('slow').prepend($('.title'));
     $(".title").css({'width':'40vw', 'max-width':'20rem', 'margin':'10px auto'});
@@ -47,25 +52,30 @@ function start(difficultyLevel) {
     getQuestions(difficultyLevel);
 }
 
+/**
+ * Accepts difficult level as a parameter
+ * Uses our difficulty Level to get the correct question set from our questions.json using a fetch request
+ * The question set is then passed into shuffle
+ * @param {string} difficultyLevel 
+ */
 //use our difficulty level to retrieve correct questions
 function getQuestions(difficultyLevel) {
-    // fetch will get the data with a promise 
     fetch("./assets/data/questions.json")
-    // then we pass the response from the fetch into an anonymous function that parses the data
     .then(response => response.json())
-    // we then pass the result from that function into another anonymous function
     .then(questions => {
-        // this will set our globalQuestions as the result
         globalQuestions = questions;
-        // we then use our difficultyLevel to get the correct question set from our globalQuestions which we named levelQuestions
         let levelQuestions = questions[`${difficultyLevel}Questions`];
-        //finally we pass levelQuestions into updateQuestion and then displayQuestion
         shuffle(levelQuestions);
         displayQuestion();
     });
 }
 
-//credit this function - https://javascript.info/task/shuffle
+/**
+ * Accepts levelQuestions array as a parameter
+ * Uses Fisher-Yates algorithm to shuffle the array 
+ * @param {array} levelQuestions 
+ */
+// Crediting this function - https://javascript.info/task/shuffle
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
