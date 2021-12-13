@@ -330,7 +330,7 @@ Running the project locally can be done in a few short steps.
 * I got my questions from [THE QUIZ](https://www.thequiz.com/how-well-do-you-know-doom/)
 * The video from [Web Dev Simplified](https://www.youtube.com/watch?v=riDzcEQbX6k) really helped me work through the logic of making this app
 * I took a lot of the images and the music theme from [yvesgurcan Github project](https://github.com/yvesgurcan/jsdoom)
-* Finally I'd like to thank my family and friends for testing the app and special thanks goes out to the two lads, Adam and Alex, of Creative Underground, and Peter of dt-squad for helping me with a few of the tricky elements that I needed guidance on.
+* Finally I'd like to thank my family and friends for testing the app and special thanks goes out to the two lads, [Adam](https://github.com/klexas) and [Alex](https://github.com/apssouza22), of Creative Underground, and [Peter](https://github.com/pbs-websuntangled) of [Dt-squad](https://www.dt-squad.com/) for helping me with a few of the tricky elements that I needed guidance on.
 
 ### **Inspiration**
 It's pretty obvious where my inspiration for the app came from. I was one of those young lads sneaking into my uncles room to turn on his PC to play Doom and running out after 15 minutes because I was terrified.
