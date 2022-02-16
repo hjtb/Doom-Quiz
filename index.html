@@ -45,7 +45,7 @@
             </div>
         </div>
     </div>
-    <img class="title" src="assets/images/logo_doom.png" alt="Doom 1993 logo">
+    <img id="title" src="assets/images/logo_doom.png" alt="Doom 1993 logo">
     <div id="open-menu" class='container'>
         <div class="big-doom-text">
             SELECT YOUR LEVEL OF DIFFICULTY
@@ -55,6 +55,7 @@
     </div>
 
     <div id="game-area" class="container hide">
+        <img id="game-area-title" src="assets/images/logo_doom.png" alt="Doom 1993 logo">
         <button id="mute" data-type="toggle-mute" type="button" class="btn small-doom-text">On <i class="fas fa-volume-up"></i></button>
         <div class="card slide-up" id="score"> 
             <img id="doom-guy" src="assets/images/doom-guy/guy-3.png" alt="Doom guys face">
@@ -74,11 +75,13 @@
     <div id="you-die" class="container end-game hide">
         <div><img class="final-image" src="assets/images/doom-guy/dead.png" alt="Doom guy dead"></div> 
         <div>YOU DIED!!</div> 
+        <button type="button" data-type="play-again" class="btn small-doom-text play-again">Play Again</button>
     </div>
 
     <div id="you-survived" class="container end-game hide">
         <div><img class="final-image" src="assets/images/doom-guy/evil-3.png" alt="Doom guy with an evil grin"></div>
         <div>YOU LIVE TO FIGHT ANOTHER DAY!!</div>
+        <button type="button" data-type="play-again" class="btn small-doom-text play-again">Play Again</button>
     </div>
 
     <audio loop="loop" id="doom-theme-music">

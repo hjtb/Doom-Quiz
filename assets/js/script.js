@@ -3,9 +3,10 @@ let globalQuestions;
 let difficultyLevel;
 let levelQuestions;
 let questionIndex = 0;
-let lives = 3;
+let lives = 0;
 let streak = 0;
 const doomGuyRef = document.querySelector("#doom-guy");
+const titleImageRef = document.querySelector("#title");
 const gameAreaRef = document.querySelector("#game-area");
 const scoreCardRef = document.querySelectorAll(".slide-up");
 const openMenuRef = document.querySelector("#open-menu"); 
@@ -14,6 +15,7 @@ const currentStreakRef = document.querySelector("#streak");
 const scoreUpdateRef = document.querySelector("#score-update");
 const doomThemeMusicRef = document.querySelector("#doom-theme-music");
 const muteButtonRef = document.querySelector("#mute");
+const playAgainButtonRef = document.querySelectorAll(".playAgain");
 const youSurvivedRef = document.querySelector("#you-survived");
 const youDieRef = document.querySelector("#you-die");
 const answerARef = document.querySelector("#answer-a");
@@ -30,6 +32,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 checkAnswer(answer);
             } else if (this.getAttribute("data-type") === "toggle-mute"){
                 toggleMute(this.textContent);
+            } else if (this.getAttribute("data-type") === "play-again"){
+                playAgain();
             } else {
                 difficultyLevel = this.getAttribute("data-type");
                 start(difficultyLevel);
@@ -49,6 +53,7 @@ function start(difficultyLevel) {
     $(gameAreaRef).slideDown('slow').prepend($('.title'));
     $(".title").css({'width':'40vw', 'max-width':'20rem', 'margin':'10px auto'});
     $(openMenuRef).slideUp('fast');
+    $(titleImageRef).slideUp('fast');
     getQuestions(difficultyLevel);
 }
 
@@ -81,7 +86,7 @@ function shuffle(array) {
       let j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
     }
-  }
+}
 
   /**
  * Displays the correct question and answer by using the levelQuestions and the difficulty level
@@ -186,7 +191,7 @@ function wrongAnswer(answer) {
         doomGuyRef.src = "assets/images/doom-guy/guy-1.png";
         getNextQuestion();
     }
-    else if (lives === 0) {
+    else if (lives <= 0) {
         $(gameAreaRef).slideUp('fast');
         $(youDieRef).slideDown('slow');
     }
@@ -195,13 +200,27 @@ function wrongAnswer(answer) {
 /**
  * Increments the question index
  * Calls displayQuestion function
- * @param {*} levelQuestions 
+ * @param {*} 
  */
 function getNextQuestion() {
     questionIndex = questionIndex + 1;
     // remove focus from clicked answer
     document.activeElement.blur();
     displayQuestion();
+}
+
+/**
+ * Resets the game
+ * @param {*} 
+ */
+function playAgain() {
+    $(youDieRef).slideUp('fast');
+    $(youSurvivedRef).slideUp('fast');
+    questionIndex = 0;
+    lives = 3;
+    streak = 0;
+    $(titleImageRef).slideDown('slow');
+    $(openMenuRef).slideDown('slow');
 }
 
 /**
